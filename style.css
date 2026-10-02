@@ -1,0 +1,75 @@
+/* Najit 共通スタイル（プライバシーポリシー等の文書ページ用） */
+:root {
+  --bg: #ffffff;
+  --fg: #222222;
+  --muted: #666666;
+  --accent: #ff9f0a;
+  --line: #e3e5e8;
+  --link: #1a73e8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1d20;
+    --fg: #f1f1f1;
+    --muted: #a0a3a8;
+    --line: #383b40;
+    --link: #8ab4f8;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
+  line-height: 1.8;
+}
+a { color: var(--link); }
+
+.site-header {
+  background: #2b2d31;
+  padding: 14px 16px;
+}
+.site-header a {
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.doc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+}
+.doc h1 { font-size: 26px; line-height: 1.4; margin: 24px 0 8px; }
+.doc h2 { font-size: 18px; margin: 32px 0 8px; }
+.doc p { margin: 0 0 12px; }
+.doc ul { margin: 0 0 12px; padding-left: 1.4em; }
+.doc li { margin-bottom: 4px; }
+.doc .meta { color: var(--muted); }
+.doc .updated { color: var(--muted); margin-top: 24px; }
+
+.langs {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.doc section + section {
+  margin-top: 56px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 20px 16px 32px;
+}
