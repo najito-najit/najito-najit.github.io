@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Najit</title>
+<meta name="description" content="Najit — 使う人になじむ、ちょうどいいアプリ。 / Apps that just fit the way you use them.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #222222;
+    --muted: #666666;
+    --accent: #ff9f0a;
+    --card: #f6f7f9;
+    --line: #e3e5e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1d20;
+      --fg: #f1f1f1;
+      --muted: #a0a3a8;
+      --card: #26282c;
+      --line: #383b40;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+  }
+  header {
+    background: #2b2d31;
+    text-align: center;
+    padding: 64px 16px 56px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 56px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+  header p {
+    margin: 8px 0 0;
+    font-size: 18px;
+    color: var(--accent);
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; }
+  .about p { margin: 0 0 8px; }
+  .en { color: var(--muted); font-size: 15px; }
+  .app {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 12px 0;
+  }
+  .app h3 { margin: 0 0 4px; font-size: 17px; }
+  .app p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
+  .links a { margin-right: 16px; font-size: 14px; }
+  a { color: #1a73e8; }
+  @media (prefers-color-scheme: dark) { a { color: #8ab4f8; } }
+  footer {
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 20px 16px 32px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Najit</h1>
+  <p>使う人になじむ、ちょうどいいアプリ。</p>
+</header>
+
+<main>
+  <section class="about">
+    <h2>Najit（ナジット）について</h2>
+    <p>コンセプトは「なじむ・ジャスト・フィット」。あなたの使い方に合わせてカスタマイズでき、一人ひとりにちょうどよくなじむアプリを目指しています。</p>
+    <p class="en">Najit makes apps that fit the way you use them — customizable, simple, and just right for each person.</p>
+  </section>
+
+  <section>
+    <h2>アプリ / Apps</h2>
+
+    <div class="app">
+      <h3>カリドリカメラ / ForNow Cam</h3>
+      <p>撮った写真が、決めた日数で自動的に消えるカメラ。<br>
+         <span class="en">A camera whose photos auto-delete after the number of days you choose.</span></p>
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=app.najit.karidori">Google Play</a>
+        <a href="https://sites.google.com/view/najit/karidoricamera-privacy">プライバシーポリシー / Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="app">
+      <h3>ピッとカメラ</h3>
+      <p>カメラ設定を保存して、ワンタッチで撮影できるカメラ。</p>
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera">Google Play</a>
+        <a href="https://sites.google.com/view/najit/pitcamera-privacy">プライバシーポリシー</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>お問い合わせ / Contact</h2>
+    <p><a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></p>
+  </section>
+</main>
+
+<footer>&copy; Najit</footer>
+
+</body>
+</html>
