@@ -3,158 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Najit</title>
-<meta name="description" content="Najit — 使う人になじむ、ちょうどいいアプリ。 / Apps that just fit the way you use them.">
+<title>Najit｜ナジトのアプリ</title>
+<meta name="description" content="ナジトです。小さな困りごとを、アプリにしています。Najit のアプリ一覧と開発日記。 / Small apps that fit the way you use them — by Najit.">
+<meta property="og:title" content="Najit｜ナジトのアプリ">
+<meta property="og:description" content="小さな困りごとを、アプリにしています。">
 <style>
-  :root {
-    --bg: #ffffff;
-    --fg: #222222;
-    --muted: #666666;
-    --accent: #ff9f0a;
-    --card: #f6f7f9;
-    --line: #e3e5e8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1c1d20;
-      --fg: #f1f1f1;
-      --muted: #a0a3a8;
-      --card: #26282c;
-      --line: #383b40;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", sans-serif;
-    line-height: 1.7;
-  }
-  header {
-    background: #2b2d31;
-    text-align: center;
-    padding: 64px 16px 56px;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 56px;
-    letter-spacing: 1px;
-    color: var(--accent);
-  }
-  header p {
-    margin: 8px 0 0;
-    font-size: 18px;
-    color: var(--accent);
-  }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
-  h2 { font-size: 20px; margin: 40px 0 12px; }
-  .about p { margin: 0 0 8px; }
-  .en { color: var(--muted); font-size: 15px; }
-  .app {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 16px 18px;
-    margin: 12px 0;
-  }
-  .app .shot { display: block; width: 100%; height: auto; border-radius: 8px; margin: 0 0 12px; }
-  .app h3 { margin: 0 0 4px; font-size: 17px; }
-  .app p { margin: 0 0 8px; color: var(--muted); font-size: 15px; }
-  .links a { margin-right: 16px; font-size: 14px; }
-  a { color: #1a73e8; }
-  @media (prefers-color-scheme: dark) { a { color: #8ab4f8; } }
-  footer {
-    border-top: 1px solid var(--line);
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    padding: 20px 16px 32px;
-  }
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:19px}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+.hero{display:flex;align-items:center;gap:8px;padding:2px 0 10px}
+.hero img{width:130px;height:auto;flex:none}
+.say{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:10px 14px;flex:1}
+.say:before{content:"";position:absolute;left:-12px;top:34px;border:10px solid transparent;border-right-color:var(--ink);border-left:0}
+.say:after{content:"";position:absolute;left:-8px;top:36px;border:8px solid transparent;border-right-color:var(--card);border-left:0}
+.say b{display:block;font-size:19px;line-height:1.3}
+.say span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+h2{font-size:16px;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
+h2:before{content:"";width:7px;height:20px;border-radius:4px;background:var(--orange)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.app{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center}
+.app img{width:72px;height:72px;border-radius:18px;display:block;margin:0 auto 6px}
+.app h3{margin:0;font-size:14.5px;line-height:1.35}
+.app p{margin:3px 0 8px;font-size:11.5px;color:var(--muted);line-height:1.45}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:999px}
+.btn.sub{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:4px}
+.diary{display:flex;gap:10px;align-items:flex-end;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:10px 12px}
+.diary img{width:84px;height:auto}
+.diary p{margin:0 0 6px;font-size:13px}
+.note{font-size:12.5px;color:var(--muted);margin:12px 2px}
+.note a{color:var(--orange);font-weight:700}
+.pp{font-size:12px;color:var(--muted);margin:8px 2px}
+.pp a{color:var(--muted);margin-right:10px}
+footer{border-top:1.5px solid var(--line);margin-top:18px;padding:12px 0 24px;font-size:12px;color:var(--muted);text-align:center}
+footer a{color:var(--muted);margin:0 6px}
+@media (min-width:700px){.wrap{max-width:640px}.hero img{width:160px}}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <div class="top"><div class="logo">Najit</div><div class="nav"><a href="#apps">アプリ</a><a href="#diary">開発日記</a></div></div>
 
-<header>
-  <h1>Najit</h1>
-  <p>使う人になじむ、ちょうどいいアプリ。</p>
-</header>
-
-<main>
-  <section class="about">
-    <h2>Najit（ナジット）について</h2>
-    <p>コンセプトは「なじむ・ジャスト・フィット」。あなたの使い方に合わせてカスタマイズでき、一人ひとりにちょうどよくなじむアプリを目指しています。</p>
-    <p>開発・運営：ナジト（Najit の中の人）</p>
-    <p class="en">Najit makes apps that fit the way you use them — customizable, simple, and just right for each person.</p>
+  <section class="hero">
+    <img src="images/najit_hero.png" width="130" height="190" alt="ナジト（ミカンの被り物のキャラクター）">
+    <div class="say"><b>ナジトです。</b><span>小さな困りごとを、アプリにしています。（Najit の中の人）</span></div>
   </section>
 
-  <section>
-    <h2>アプリ / Apps</h2>
+  <h2 id="apps">つくったアプリ / Apps</h2>
+  <div class="grid">
+    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera"><img src="images/icon_pitcamera.png" width="72" height="72" alt="ピッとカメラ"></a>
+      <h3>ピッとカメラ</h3><p>撮影設定を保存して、ワンタップで切り替え</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.pitcamera">Google Play</a></div>
+    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.karidori"><img src="images/icon_karidori.png" width="72" height="72" alt="カリドリカメラ"></a>
+      <h3>カリドリカメラ</h3><p>撮った写真が、決めた日数で自動的に消える</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.karidori">Google Play</a></div>
+    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.komameclean"><img src="images/icon_komameclean.png" width="72" height="72" alt="こまめクリーン"></a>
+      <h3>こまめクリーン</h3><p>消してもよさそうな写真を、毎日1〜5枚だけピックアップ</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.komameclean">Google Play</a></div>
+    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.workpicker"><img src="images/icon_workpicker.png" width="72" height="72" alt="仕事写真ピッカー"></a>
+      <h3>仕事写真ピッカー</h3><p>仕事の写真を、1つのフォルダに集める</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.workpicker">Google Play</a></div>
+  </div>
 
-    <div class="app">
-      <a href="https://play.google.com/store/apps/details?id=app.najit.karidori"><img class="shot" src="images/karidori.png" width="800" height="391" alt="カリドリカメラ：仮で撮るカメラ。自分で消さなくていい" loading="lazy"></a>
-      <h3>カリドリカメラ / ForNow Cam</h3>
-      <p>撮った写真が、決めた日数で自動的に消えるカメラ。<br>
-         <span class="en">A camera whose photos auto-delete after the number of days you choose.</span></p>
-      <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=app.najit.karidori">Google Play</a>
-        <a href="karidori/privacy/">プライバシーポリシー / Privacy Policy</a>
-      </div>
+  <h2 id="diary">ナジトの開発日記</h2>
+  <div class="diary">
+    <img src="images/najit_coffee.png" width="84" height="84" alt="">
+    <div>
+      <p>うまくいったことも、いかなかったことも、少しずつ書いています。</p>
+      <a class="btn" href="https://www.youtube.com/@najito_najit">YouTube</a><a class="btn sub" href="https://note.com/najit">note</a><a class="btn sub" href="https://x.com/najito_najit">X</a>
     </div>
+  </div>
 
-    <div class="app">
-      <a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera"><img class="shot" src="images/pitcamera.png" width="800" height="391" alt="ピッとカメラ：よく使う撮影設定をボタンに登録。ワンタップでピッと切り替え" loading="lazy"></a>
-      <h3>ピッとカメラ</h3>
-      <p>カメラ設定を保存して、ワンタップで切り替えられるカメラ。</p>
-      <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera">Google Play</a>
-        <a href="pitcamera/privacy/">プライバシーポリシー</a>
-      </div>
-    </div>
+  <p class="note">Najit は「なじむ・ジャスト・フィット」から。使う人になじむ、ちょうどいいアプリを目指しています。<br>これまでのトップページは<a href="classic/">こちら</a>に残しています。<br>
+  <span style="font-size:12px">Najit makes apps that fit the way you use them — small, simple, and just right.</span></p>
 
-    <div class="app">
-      <a href="https://play.google.com/store/apps/details?id=app.najit.komameclean"><img class="shot" src="images/komameclean.png" width="800" height="391" alt="こまめクリーン：毎日1〜5枚の見直しで、スマホの容量を整理" loading="lazy"></a>
-      <h3>こまめクリーン / Bit by Bit</h3>
-      <p>消してもよさそうな写真・動画を、毎日1〜5枚だけお届け。<br>
-         <span class="en">1–5 photos you may no longer need, picked daily.</span></p>
-      <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=app.najit.komameclean">Google Play</a>
-        <a href="komameclean/privacy/">プライバシーポリシー / Privacy Policy</a>
-      </div>
-    </div>
+  <p class="pp">プライバシーポリシー：
+    <a href="pitcamera/privacy/">ピッとカメラ</a><a href="karidori/privacy/">カリドリカメラ</a><a href="komameclean/privacy/">こまめクリーン</a><a href="workpicker/privacy/">仕事写真ピッカー</a></p>
 
-    <div class="app">
-      <a href="https://play.google.com/store/apps/details?id=app.najit.workpicker"><img class="shot" src="images/workpicker.png" width="800" height="391" alt="仕事写真ピッカー：仕事の写真を1つのフォルダへ" loading="lazy"></a>
-      <h3>仕事写真ピッカー</h3>
-      <p>仕事の写真を1つのフォルダに集められる、仕分けアプリ。</p>
-      <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=app.najit.workpicker">Google Play</a>
-        <a href="workpicker/privacy/">プライバシーポリシー</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>読みもの・発信 / Read &amp; Follow</h2>
-    <div class="app">
-      <h3>カメラアプリ開発の100日（note 連載・全9回）</h3>
-      <p>ピッとカメラができるまでを、AI との開発の記録として綴りました。<br>
-         <span class="en">A 9-part story of building a camera app with an AI coding assistant (Japanese).</span></p>
-      <div class="links">
-        <a href="https://note.com/najit">note</a>
-        <a href="https://x.com/najito_najit">X（@najito_najit）</a>
-        <a href="https://www.youtube.com/@najito_najit">YouTube</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>お問い合わせ / Contact</h2>
-    <p><a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></p>
-  </section>
-</main>
-
-<footer>&copy; Najit</footer>
-
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></footer>
+</div>
 </body>
 </html>
