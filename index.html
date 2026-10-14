@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<link rel="alternate" hreflang="ja" href="https://najito-najit.github.io/">
+<link rel="alternate" hreflang="en" href="https://najito-najit.github.io/en/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Najit｜ナジトのアプリ</title>
 <meta name="description" content="ナジトです。小さな困りごとを、アプリにしています。Najit のアプリ一覧と開発日記。 / Small apps that fit the way you use them — by Najit.">
@@ -25,10 +27,11 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","
 h2{font-size:16px;margin:14px 0 8px;display:flex;align-items:center;gap:8px}
 h2:before{content:"";width:7px;height:20px;border-radius:4px;background:var(--orange)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.app{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center}
+.app{display:flex;flex-direction:column;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:12px 10px;text-align:center}
 .app img{width:72px;height:72px;border-radius:18px;display:block;margin:0 auto 6px}
 .app h3{margin:0;font-size:14.5px;line-height:1.35}
 .app p{margin:3px 0 8px;font-size:11.5px;color:var(--muted);line-height:1.45}
+.app .btn{margin-top:auto}
 .btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:999px}
 .btn.sub{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:4px}
 .diary{display:flex;gap:10px;align-items:flex-end;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:10px 12px}
@@ -45,7 +48,7 @@ footer a{color:var(--muted);margin:0 6px}
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><div class="logo">Najit</div><div class="nav"><a href="#apps">アプリ</a><a href="#diary">開発日記</a></div></div>
+  <div class="top"><div class="logo">Najit</div><div class="nav"><a href="#apps">アプリ</a><a href="#diary">開発日記</a><a href="en/" hreflang="en" style="border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px">EN</a></div></div>
 
   <section class="hero">
     <img src="images/najit_hero.png" width="130" height="190" alt="ナジト（ミカンの被り物のキャラクター）">
