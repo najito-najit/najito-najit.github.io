@@ -1,0 +1,41 @@
+{
+  "_readme": "動画ライブラリの元データ。順番・グループ・関連はここだけで管理する。編集後に `node tools/build-diary.js` を実行すると index.html の動画ライブラリ部分が作り直される。kind は short か long。rel は関連する動画のid（カードの下にリンクが出る）。",
+  "groups": [
+    {
+      "title": "ナジトの開発日記（はじまりから）",
+      "lead": "アプリ開発を始めたきっかけから、つまずいたことまで。上から順に見ると、話がつながります。",
+      "items": [
+        { "id": "WVqm4rJKwCU", "kind": "short", "date": "2026-10-14", "title": "アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】", "note": "自己紹介と、アプリ開発を始めたきっかけの話。", "rel": ["I3JpmEyHkfw"] },
+        { "id": "I3JpmEyHkfw", "kind": "short", "date": "2026-10-16", "title": "最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】", "note": "最初のアプリ（ピッとカメラ）の話。", "rel": ["19w80LWk5is"] },
+        { "id": "19w80LWk5is", "kind": "short", "date": "2026-10-17", "title": "カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】", "note": "超広角にならない端末があった、という話。", "rel": ["XFnGnfhE__0"] },
+        { "id": "XFnGnfhE__0", "kind": "short", "date": "2026-10-18", "title": "カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】", "note": "その1の続き。指示の出し方が違っていた、という話。", "rel": ["19w80LWk5is"] },
+        { "id": "XSJHP0baS1Y", "kind": "short", "date": "2026-10-21", "title": "バージョン管理なしで、2か月個人開発していました", "note": "戻せないまま作り続けた、最初の2か月の話。", "rel": ["19w80LWk5is"] }
+      ]
+    },
+    {
+      "title": "開発ツールの小技",
+      "lead": "個人開発で使っているツールの、体験ベースの小技。",
+      "items": [
+        { "id": "CX9-zP82DCw", "kind": "short", "date": "2026-10-23", "title": "Claude Codeの5時間制限、夜だけ使う人の小技", "note": "体験ベースの小技です。公式には確認していません（動画にも明記しています）。", "rel": [] }
+      ]
+    },
+    {
+      "title": "アプリの紹介（日本語）",
+      "lead": "4つのアプリを、それぞれ短く紹介した動画と、まとめて紹介した動画。",
+      "items": [
+        { "id": "0BtDT12hH18", "kind": "short", "date": "2026-10-09", "title": "自動で消えるメモ写真！カリドリカメラ", "note": "撮った写真が、決めた日数で自動的に消えるカメラ。", "rel": ["mGe_JHbdjQQ"] },
+        { "id": "DiOApXXsYO4", "kind": "short", "date": "2026-10-11", "title": "いらない写真、パパっと消しませんか？【こまめクリーン】", "note": "消してもよさそうな写真を、毎日1〜5枚だけ。", "rel": ["opGsKfMiD0s"] },
+        { "id": "YBuMYlEkPEU", "kind": "short", "date": "2026-10-13", "title": "仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】", "note": "仕事の写真を、1つのフォルダに集める。", "rel": [] },
+        { "id": "-YbisSSCnwU", "kind": "long", "date": "2026-10-19", "title": "【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介", "note": "4つのアプリをまとめて紹介（3分16秒）。", "rel": [] }
+      ]
+    },
+    {
+      "title": "English videos",
+      "lead": "Short videos in English.",
+      "items": [
+        { "id": "mGe_JHbdjQQ", "kind": "short", "date": "2026-10-11", "title": "Do your memo photos pile up forever? | ForNow Cam #Shorts", "note": "ForNow Cam is the English name of Karidori Camera.", "rel": ["0BtDT12hH18"] },
+        { "id": "opGsKfMiD0s", "kind": "short", "date": "2026-10-12", "title": "Delete the photos you don't need in a snap | Bit by Bit #Shorts", "note": "Bit by Bit is the English name of Komame Clean.", "rel": ["DiOApXXsYO4"] }
+      ]
+    }
+  ]
+}
