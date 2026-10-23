@@ -47,22 +47,31 @@ footer a{color:var(--muted);margin:0 6px}
 .vgroup{font-size:14.5px;margin:18px 2px 2px}
 .vlead{font-size:12px;color:var(--muted);margin:0 2px 8px;line-height:1.5}
 .vlist{display:grid;gap:8px}
-.vid{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px}
+.vid{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px}
 .vid:target{border-color:var(--orange)}
+.vthumb{position:relative;flex:none;display:block;width:90px;border-radius:10px;overflow:hidden;background:#000;line-height:0}
+.vthumb.long{width:150px}
+.vthumb img{display:block;width:100%;height:auto}
+.vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;line-height:1;background:rgba(0,0,0,.16);text-shadow:0 1px 5px rgba(0,0,0,.65)}
+.vthumb:hover .vplay{background:rgba(0,0,0,.05)}
+.vbody{flex:1;min-width:0}
 .vhead{display:flex;gap:8px;align-items:flex-start}
 .vno{flex:none;width:22px;height:22px;border-radius:50%;background:var(--orange);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .vtitle{margin:0;font-size:13.5px;line-height:1.45}
 .vmeta{margin:3px 0 0 30px;font-size:11.5px;color:var(--muted)}
 .vnote{margin:4px 0 0 30px;font-size:12.5px}
-.vact{margin:8px 0 0 30px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.play{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px}
+.vact{margin:6px 0 0 30px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btnplay{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12px;padding:4px 12px;border-radius:999px}
 .ytlink{font-size:12px;color:var(--muted)}
 .vrel{margin:6px 0 0 30px;font-size:11.5px;color:var(--muted)}
 .vrel a{color:var(--muted)}
-.vframe{margin:8px 0 0 30px;width:calc(100% - 30px)}
+.vframe{width:100%}
 .vframe.short{max-width:260px;aspect-ratio:9/16}
 .vframe.long{aspect-ratio:16/9}
 .vframe iframe{width:100%;height:100%;border:0;border-radius:10px;background:#000}
+.vid.playing{flex-direction:column}
+.vid.playing .vbody{width:100%}
+@media (max-width:380px){.vthumb{width:76px}.vthumb.long{width:120px}.vbody .vmeta,.vbody .vnote,.vbody .vact,.vbody .vrel{margin-left:0}}
 @media (min-width:700px){.wrap{max-width:640px}.hero img{width:160px}}
 </style>
 </head>
@@ -100,104 +109,140 @@ footer a{color:var(--muted);margin:0 6px}
     </div>
   </div>
 
-  <p class="vintro">動画を、順番とテーマで整理しています。「▶ ここで再生」を押すと、このページの中で再生します（押すまで、YouTubeへの接続はしません）。</p>
+  <p class="vintro">動画を、順番とテーマで整理しています。サムネイルを押すと、このページの中で再生します（押すまで、YouTubeへの接続はしません）。</p>
   <div class="library" id="library">
     <!-- LIBRARY:START -->
     <h3 class="vgroup">ナジトの開発日記（はじまりから）</h3>
     <p class="vlead">アプリ開発を始めたきっかけから、つまずいたことまで。上から順に見ると、話がつながります。</p>
     <div class="vlist">
       <article class="vid" id="v-WVqm4rJKwCU">
-        <div class="vhead"><span class="vno">1</span><h4 class="vtitle">アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】</h4></div>
-        <p class="vmeta">10/14 公開　ショート</p>
-        <p class="vnote">自己紹介と、アプリ開発を始めたきっかけの話。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/WVqm4rJKwCU" data-id="WVqm4rJKwCU" data-kind="short" data-title="アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/WVqm4rJKwCU">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-I3JpmEyHkfw">最初に作ったアプリは、カメラのアプリでした</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/WVqm4rJKwCU" data-id="WVqm4rJKwCU" data-kind="short" data-title="アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】" aria-label="再生：アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】"><img src="images/thumbs/WVqm4rJKwCU.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">1</span><h4 class="vtitle">アプリ開発を始めたきっかけ、教えてください【ナジトの開発日記】</h4></div>
+          <p class="vmeta">10/14 公開　ショート</p>
+          <p class="vnote">自己紹介と、アプリ開発を始めたきっかけの話。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/WVqm4rJKwCU">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-I3JpmEyHkfw">最初に作ったアプリは、カメラのアプリでした</a></p>
+        </div>
       </article>
       <article class="vid" id="v-I3JpmEyHkfw">
-        <div class="vhead"><span class="vno">2</span><h4 class="vtitle">最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】</h4></div>
-        <p class="vmeta">10/16 公開　ショート</p>
-        <p class="vnote">最初のアプリ（ピッとカメラ）の話。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/I3JpmEyHkfw" data-id="I3JpmEyHkfw" data-kind="short" data-title="最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/I3JpmEyHkfw">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/I3JpmEyHkfw" data-id="I3JpmEyHkfw" data-kind="short" data-title="最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】" aria-label="再生：最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】"><img src="images/thumbs/I3JpmEyHkfw.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">2</span><h4 class="vtitle">最初に作ったアプリは、カメラのアプリでした【ナジトの開発日記】</h4></div>
+          <p class="vmeta">10/16 公開　ショート</p>
+          <p class="vnote">最初のアプリ（ピッとカメラ）の話。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/I3JpmEyHkfw">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        </div>
       </article>
       <article class="vid" id="v-19w80LWk5is">
-        <div class="vhead"><span class="vno">3</span><h4 class="vtitle">カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】</h4></div>
-        <p class="vmeta">10/17 公開　ショート</p>
-        <p class="vnote">超広角にならない端末があった、という話。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/19w80LWk5is" data-id="19w80LWk5is" data-kind="short" data-title="カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/19w80LWk5is">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-XFnGnfhE__0">カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/19w80LWk5is" data-id="19w80LWk5is" data-kind="short" data-title="カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】" aria-label="再生：カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】"><img src="images/thumbs/19w80LWk5is.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">3</span><h4 class="vtitle">カメラアプリで苦戦したこと、その1:超広角にならない【ナジトの開発日記】</h4></div>
+          <p class="vmeta">10/17 公開　ショート</p>
+          <p class="vnote">超広角にならない端末があった、という話。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/19w80LWk5is">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-XFnGnfhE__0">カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった</a></p>
+        </div>
       </article>
       <article class="vid" id="v-XFnGnfhE__0">
-        <div class="vhead"><span class="vno">4</span><h4 class="vtitle">カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】</h4></div>
-        <p class="vmeta">10/18 公開　ショート</p>
-        <p class="vnote">その1の続き。指示の出し方が違っていた、という話。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/XFnGnfhE__0" data-id="XFnGnfhE__0" data-kind="short" data-title="カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/XFnGnfhE__0">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/XFnGnfhE__0" data-id="XFnGnfhE__0" data-kind="short" data-title="カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】" aria-label="再生：カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】"><img src="images/thumbs/XFnGnfhE__0.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">4</span><h4 class="vtitle">カメラアプリで苦戦したこと、その2:超広角の指示方法は「0.5x」じゃなかった【ナジトの開発日記】</h4></div>
+          <p class="vmeta">10/18 公開　ショート</p>
+          <p class="vnote">その1の続き。指示の出し方が違っていた、という話。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/XFnGnfhE__0">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        </div>
       </article>
       <article class="vid" id="v-XSJHP0baS1Y">
-        <div class="vhead"><span class="vno">5</span><h4 class="vtitle">バージョン管理なしで、2か月個人開発していました</h4></div>
-        <p class="vmeta">10/21 公開　ショート</p>
-        <p class="vnote">戻せないまま作り続けた、最初の2か月の話。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/XSJHP0baS1Y" data-id="XSJHP0baS1Y" data-kind="short" data-title="バージョン管理なしで、2か月個人開発していました">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/XSJHP0baS1Y">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/XSJHP0baS1Y" data-id="XSJHP0baS1Y" data-kind="short" data-title="バージョン管理なしで、2か月個人開発していました" aria-label="再生：バージョン管理なしで、2か月個人開発していました"><img src="images/thumbs/XSJHP0baS1Y.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">5</span><h4 class="vtitle">バージョン管理なしで、2か月個人開発していました</h4></div>
+          <p class="vmeta">10/21 公開　ショート</p>
+          <p class="vnote">戻せないまま作り続けた、最初の2か月の話。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/XSJHP0baS1Y">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-19w80LWk5is">カメラアプリで苦戦したこと、その1:超広角にならない</a></p>
+        </div>
       </article>
     </div>
     <h3 class="vgroup">開発ツールの小技</h3>
     <p class="vlead">個人開発で使っているツールの、体験ベースの小技。</p>
     <div class="vlist">
       <article class="vid" id="v-CX9-zP82DCw">
-        <div class="vhead"><span class="vno">1</span><h4 class="vtitle">Claude Codeの5時間制限、夜だけ使う人の小技</h4></div>
-        <p class="vmeta">10/23 公開　ショート</p>
-        <p class="vnote">体験ベースの小技です。公式には確認していません（動画にも明記しています）。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/CX9-zP82DCw" data-id="CX9-zP82DCw" data-kind="short" data-title="Claude Codeの5時間制限、夜だけ使う人の小技">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/CX9-zP82DCw">YouTubeで見る</a></div>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/CX9-zP82DCw" data-id="CX9-zP82DCw" data-kind="short" data-title="Claude Codeの5時間制限、夜だけ使う人の小技" aria-label="再生：Claude Codeの5時間制限、夜だけ使う人の小技"><img src="images/thumbs/CX9-zP82DCw.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">1</span><h4 class="vtitle">Claude Codeの5時間制限、夜だけ使う人の小技</h4></div>
+          <p class="vmeta">10/23 公開　ショート</p>
+          <p class="vnote">体験ベースの小技です。公式には確認していません（動画にも明記しています）。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/CX9-zP82DCw">YouTubeで見る</a></div>
+        </div>
       </article>
     </div>
     <h3 class="vgroup">アプリの紹介（日本語）</h3>
     <p class="vlead">4つのアプリを、それぞれ短く紹介した動画と、まとめて紹介した動画。</p>
     <div class="vlist">
       <article class="vid" id="v-0BtDT12hH18">
-        <div class="vhead"><span class="vno">1</span><h4 class="vtitle">自動で消えるメモ写真！カリドリカメラ</h4></div>
-        <p class="vmeta">10/9 公開　ショート</p>
-        <p class="vnote">撮った写真が、決めた日数で自動的に消えるカメラ。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/0BtDT12hH18" data-id="0BtDT12hH18" data-kind="short" data-title="自動で消えるメモ写真！カリドリカメラ">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/0BtDT12hH18">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-mGe_JHbdjQQ">Do your memo photos pile up forever?</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/0BtDT12hH18" data-id="0BtDT12hH18" data-kind="short" data-title="自動で消えるメモ写真！カリドリカメラ" aria-label="再生：自動で消えるメモ写真！カリドリカメラ"><img src="images/thumbs/0BtDT12hH18.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">1</span><h4 class="vtitle">自動で消えるメモ写真！カリドリカメラ</h4></div>
+          <p class="vmeta">10/9 公開　ショート</p>
+          <p class="vnote">撮った写真が、決めた日数で自動的に消えるカメラ。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/0BtDT12hH18">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-mGe_JHbdjQQ">Do your memo photos pile up forever?</a></p>
+        </div>
       </article>
       <article class="vid" id="v-DiOApXXsYO4">
-        <div class="vhead"><span class="vno">2</span><h4 class="vtitle">いらない写真、パパっと消しませんか？【こまめクリーン】</h4></div>
-        <p class="vmeta">10/11 公開　ショート</p>
-        <p class="vnote">消してもよさそうな写真を、毎日1〜5枚だけ。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/DiOApXXsYO4" data-id="DiOApXXsYO4" data-kind="short" data-title="いらない写真、パパっと消しませんか？【こまめクリーン】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/DiOApXXsYO4">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-opGsKfMiD0s">Delete the photos you don't need in a snap</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/DiOApXXsYO4" data-id="DiOApXXsYO4" data-kind="short" data-title="いらない写真、パパっと消しませんか？【こまめクリーン】" aria-label="再生：いらない写真、パパっと消しませんか？【こまめクリーン】"><img src="images/thumbs/DiOApXXsYO4.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">2</span><h4 class="vtitle">いらない写真、パパっと消しませんか？【こまめクリーン】</h4></div>
+          <p class="vmeta">10/11 公開　ショート</p>
+          <p class="vnote">消してもよさそうな写真を、毎日1〜5枚だけ。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/DiOApXXsYO4">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-opGsKfMiD0s">Delete the photos you don't need in a snap</a></p>
+        </div>
       </article>
       <article class="vid" id="v-YBuMYlEkPEU">
-        <div class="vhead"><span class="vno">3</span><h4 class="vtitle">仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】</h4></div>
-        <p class="vmeta">10/13 公開　ショート</p>
-        <p class="vnote">仕事の写真を、1つのフォルダに集める。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/YBuMYlEkPEU" data-id="YBuMYlEkPEU" data-kind="short" data-title="仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/YBuMYlEkPEU">YouTubeで見る</a></div>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/YBuMYlEkPEU" data-id="YBuMYlEkPEU" data-kind="short" data-title="仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】" aria-label="再生：仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】"><img src="images/thumbs/YBuMYlEkPEU.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">3</span><h4 class="vtitle">仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】</h4></div>
+          <p class="vmeta">10/13 公開　ショート</p>
+          <p class="vnote">仕事の写真を、1つのフォルダに集める。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/YBuMYlEkPEU">YouTubeで見る</a></div>
+        </div>
       </article>
       <article class="vid" id="v--YbisSSCnwU">
-        <div class="vhead"><span class="vno">4</span><h4 class="vtitle">【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介</h4></div>
-        <p class="vmeta">10/19 公開　通常動画</p>
-        <p class="vnote">4つのアプリをまとめて紹介（3分16秒）。</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/watch?v=-YbisSSCnwU" data-id="-YbisSSCnwU" data-kind="long" data-title="【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/watch?v=-YbisSSCnwU">YouTubeで見る</a></div>
+        <a class="play vthumb long" href="https://www.youtube.com/watch?v=-YbisSSCnwU" data-id="-YbisSSCnwU" data-kind="long" data-title="【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介" aria-label="再生：【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介"><img src="images/thumbs/-YbisSSCnwU.jpg" width="150" height="84" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">4</span><h4 class="vtitle">【個人開発】開始5ヶ月で公開した4つのAndroidアプリを紹介</h4></div>
+          <p class="vmeta">10/19 公開　通常動画</p>
+          <p class="vnote">4つのアプリをまとめて紹介（3分16秒）。</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/watch?v=-YbisSSCnwU">YouTubeで見る</a></div>
+        </div>
       </article>
     </div>
     <h3 class="vgroup">English videos</h3>
     <p class="vlead">Short videos in English.</p>
     <div class="vlist">
       <article class="vid" id="v-mGe_JHbdjQQ">
-        <div class="vhead"><span class="vno">1</span><h4 class="vtitle">Do your memo photos pile up forever? | ForNow Cam #Shorts</h4></div>
-        <p class="vmeta">10/11 公開　ショート</p>
-        <p class="vnote">ForNow Cam is the English name of Karidori Camera.</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/mGe_JHbdjQQ" data-id="mGe_JHbdjQQ" data-kind="short" data-title="Do your memo photos pile up forever? | ForNow Cam #Shorts">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/mGe_JHbdjQQ">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-0BtDT12hH18">自動で消えるメモ写真！カリドリカメラ</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/mGe_JHbdjQQ" data-id="mGe_JHbdjQQ" data-kind="short" data-title="Do your memo photos pile up forever? | ForNow Cam #Shorts" aria-label="再生：Do your memo photos pile up forever? | ForNow Cam #Shorts"><img src="images/thumbs/mGe_JHbdjQQ.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">1</span><h4 class="vtitle">Do your memo photos pile up forever? | ForNow Cam #Shorts</h4></div>
+          <p class="vmeta">10/11 公開　ショート</p>
+          <p class="vnote">ForNow Cam is the English name of Karidori Camera.</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/mGe_JHbdjQQ">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-0BtDT12hH18">自動で消えるメモ写真！カリドリカメラ</a></p>
+        </div>
       </article>
       <article class="vid" id="v-opGsKfMiD0s">
-        <div class="vhead"><span class="vno">2</span><h4 class="vtitle">Delete the photos you don't need in a snap | Bit by Bit #Shorts</h4></div>
-        <p class="vmeta">10/12 公開　ショート</p>
-        <p class="vnote">Bit by Bit is the English name of Komame Clean.</p>
-        <div class="vact"><a class="play" href="https://www.youtube.com/shorts/opGsKfMiD0s" data-id="opGsKfMiD0s" data-kind="short" data-title="Delete the photos you don't need in a snap | Bit by Bit #Shorts">▶ ここで再生</a><a class="ytlink" href="https://www.youtube.com/shorts/opGsKfMiD0s">YouTubeで見る</a></div>
-        <p class="vrel">関連：<a href="#v-DiOApXXsYO4">いらない写真、パパっと消しませんか？</a></p>
+        <a class="play vthumb short" href="https://www.youtube.com/shorts/opGsKfMiD0s" data-id="opGsKfMiD0s" data-kind="short" data-title="Delete the photos you don't need in a snap | Bit by Bit #Shorts" aria-label="再生：Delete the photos you don't need in a snap | Bit by Bit #Shorts"><img src="images/thumbs/opGsKfMiD0s.jpg" width="90" height="160" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a>
+        <div class="vbody">
+          <div class="vhead"><span class="vno">2</span><h4 class="vtitle">Delete the photos you don't need in a snap | Bit by Bit #Shorts</h4></div>
+          <p class="vmeta">10/12 公開　ショート</p>
+          <p class="vnote">Bit by Bit is the English name of Komame Clean.</p>
+          <div class="vact"><a class="ytlink" href="https://www.youtube.com/shorts/opGsKfMiD0s">YouTubeで見る</a></div>
+          <p class="vrel">関連：<a href="#v-DiOApXXsYO4">いらない写真、パパっと消しませんか？</a></p>
+        </div>
       </article>
     </div>
     <!-- LIBRARY:END -->
@@ -212,7 +257,7 @@ footer a{color:var(--muted);margin:0 6px}
   <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></footer>
 </div>
 <script>
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.play');if(!a)return;e.preventDefault();var long=a.getAttribute('data-kind')==='long';var box=document.createElement('div');box.className='vframe '+(long?'long':'short');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);var act=a.parentNode;act.parentNode.insertBefore(box,act);act.removeChild(a);});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.play');if(!a)return;e.preventDefault();var long=a.getAttribute('data-kind')==='long';var card=a.closest('.vid');var box=document.createElement('div');box.className='vframe '+(long?'long':'short');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);if(a.classList.contains('vthumb')){card.classList.add('playing');a.parentNode.replaceChild(box,a);}else{var act=a.parentNode;act.parentNode.insertBefore(box,act);act.removeChild(a);}});
 </script>
 <script src="utm.js" defer></script>
 </body>
