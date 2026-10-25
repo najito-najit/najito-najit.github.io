@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>個人開発者の道具箱｜アプリの掲載サイト一覧（登録してみた記録）｜Najit</title>
+<meta name="description" content="個人開発のAndroidアプリ4本を、7つの掲載サイトに登録してみた記録。無料で登録できるか、インストール元を追えるか、サイト側の数字が見えるか、登録のメモをまとめています。">
+<meta property="og:title" content="個人開発者の道具箱｜アプリの掲載サイト一覧">
+<meta property="og:description" content="個人開発のアプリを、7つの掲載サイトに登録してみた記録。追跡できるかどうかも整理しています。">
+<link rel="canonical" href="https://najito-najit.github.io/toolbox/sites/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE;--ok:#1f9d55;--mid:#c07a00;--ng:#c93a3a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:19px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+.crumb{font-size:12px;color:var(--muted);margin:10px 0 0}
+.crumb a{color:var(--muted)}
+.nj{display:flex;gap:10px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:8px 12px;margin:8px 0 4px}
+.nj img{flex:none;width:36px;height:auto}
+.nj p{margin:0;font-size:13px}
+h1{font-size:21px;line-height:1.4;margin:14px 0 4px}
+.lead{font-size:13.5px;color:var(--muted);margin:0 0 6px}
+.upd{font-size:12px;color:var(--muted);margin:0 0 12px}
+h2{font-size:16px;margin:22px 0 8px;display:flex;align-items:center;gap:8px}
+h2:before{content:"";width:7px;height:20px;border-radius:4px;background:var(--orange)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;font-size:12.5px}
+th{background:var(--orange);color:#fff;padding:8px 6px;font-size:11.5px;line-height:1.35}
+td{padding:8px 6px;border-top:1px solid var(--line);text-align:center;vertical-align:middle}
+td.n{text-align:left;font-weight:800;font-size:13px}
+td.n a{color:var(--ink)}
+.ok{color:var(--ok);font-weight:800}.mid{color:var(--mid);font-weight:800}.ng{color:var(--ng);font-weight:800}.no{color:#888;font-weight:700}
+td small{display:block;color:var(--muted);font-size:10.5px;font-weight:400;line-height:1.35}
+.m{font-size:22px;font-weight:900;line-height:1;margin-right:2px;-webkit-text-stroke:0.8px currentColor}
+.nb{white-space:nowrap;display:inline-block}
+.legend{font-size:12px;color:var(--muted);margin:6px 2px}
+.site{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;margin:0 0 10px}
+.site h3{margin:0 0 2px;font-size:15px}
+.site h3 a{color:var(--ink)}
+.site .tag{font-size:11.5px;color:var(--muted);margin:0 0 4px}
+.site ul{margin:4px 0 0;padding-left:18px;font-size:13px}
+.site li{margin:2px 0}
+.note{font-size:12.5px;color:var(--muted);margin:12px 2px}
+.note a{color:var(--orange);font-weight:700}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:999px;margin:2px 4px 2px 0}
+.btn.sub{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.bye{display:flex;gap:10px;align-items:center;margin:22px 0 0}
+.bye img{flex:none;width:56px;height:auto}
+.bye p{margin:0;font-size:13px;color:var(--muted);background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:8px 12px;flex:1}
+footer{border-top:1.5px solid var(--line);margin-top:22px;padding:12px 0 24px;font-size:12px;color:var(--muted);text-align:center}
+footer a{color:var(--muted);margin:0 6px}
+@media (max-width:380px){table{font-size:11.5px}td.n{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../">道具箱</a><a href="../../#apps">アプリ</a><a href="../../#diary">開発日記</a></div></div>
+
+  <p class="crumb"><a href="../">個人開発者の道具箱</a> › 掲載サイト一覧</p>
+  <div class="nj"><img src="../../images/najit_coffee.png" width="36" height="47" alt="ナジト（ミカンの被り物のキャラクター）"><p>ナジトです。個人開発のアプリを、掲載サイトに登録してみました。やってみて分かったことを、メモしています。</p></div>
+  <h1>アプリの掲載サイト一覧</h1>
+  <p class="lead">個人開発のAndroidアプリ（4本）を、7つの掲載サイトに登録してみた記録です。登録のしやすさ、インストール元を追えるか、サイト側の数字が見えるかを、実際にやってまとめています。</p>
+  <p class="upd">2026年10月25日 時点。サイトの条件や機能は変わることがあります。結果が出たら、Xでお知らせします。</p>
+
+  <h2 id="table">一覧表</h2>
+  <table>
+    <tr><th>サイト</th><th>ナジトの<br>登録状況</th><th>インストール元を<br>Playで追える</th><th>サイト側の<br>数字</th></tr>
+    <tr><td class="n"><a href="https://findupapp.com/" rel="noopener">FindUpApp</a></td><td>4件登録<span class="nb">(10月22日)</span></td><td class="ng"><b class="m">×</b><small>サイトの仕組み上、できない</small></td><td class="no">— 見当たらず</td></tr>
+    <tr><td class="n"><a href="https://kojin.dev/" rel="noopener">個人dev</a></td><td>4件登録<span class="nb">(10月24日)</span></td><td class="ok"><b class="m">○</b></td><td class="no">— 見当たらず</td></tr>
+    <tr><td class="n"><a href="https://izanami.dev/" rel="noopener">izanami</a></td><td>4件登録<span class="nb">(10月24日)</span></td><td class="ok"><b class="m">○</b></td><td class="no">— 見当たらず</td></tr>
+    <tr><td class="n"><a href="https://tsukutta.app/" rel="noopener">Tsukutta</a></td><td>4件登録<span class="nb">(10月24日)</span></td><td class="ok"><b class="m">○</b></td><td class="ok"><b class="m">○</b><small>閲覧・使用・転換</small></td></tr>
+    <tr><td class="n"><a href="https://www.solomaker.dev/" rel="noopener">Solomaker</a></td><td>4件登録<span class="nb">(10月24日)</span></td><td class="ok"><b class="m">○</b></td><td class="ok"><b class="m">○</b><small>閲覧数</small></td></tr>
+    <tr><td class="n"><a href="https://www.app-village.jp/" rel="noopener">AppVillage</a></td><td>4件登録<span class="nb">(10月24日)</span></td><td class="ok"><b class="m">○</b></td><td class="mid"><b class="m">△</b><small>お気に入りのみ</small></td></tr>
+    <tr><td class="n"><a href="https://appmikke.com/" rel="noopener">アプリみっけ！</a></td><td>4件申請<span class="nb">(10月25日)</span></td><td class="ng"><b class="m">×</b><small>サイト側の数字で補う</small></td><td class="ok"><b class="m">○</b><small>閲覧・ストア移動（承認後に確認）</small></td></tr>
+  </table>
+  <p class="legend"><span class="ok"><b class="m">○</b> できる</span>　<span class="mid"><b class="m">△</b> 一部</span>　<span class="ng"><b class="m">×</b> できない</span>　<span class="no">— 数字なし</span></p>
+  <p class="note"><b>サイト側の数字</b>とは、そのサイトが、掲載者に見せてくれる数字のことです。たとえば、掲載ページが何回見られたか（閲覧）、そこからストアやアプリへ進んだ回数（使用・ストア移動）などです。サイトが数字を出していなければ「見当たらず」と書いています。</p>
+  <p class="note"><b>Playで追える</b>とは、サイトに載せる Google Play のURLの末尾に <code>referrer=utm_source=サイト名</code> を付けて、Play Console の取得元で、そのサイト経由のインストールを分けて見られる、という意味です。件数が少ないうちは「データ不足」と出て、見えないこともあります。</p>
+
+  <h2 id="memo">サイトごとの登録メモ</h2>
+
+  <div class="site">
+    <h3><a href="https://findupapp.com/" rel="noopener">FindUpApp</a></h3>
+    <p class="tag">無料／ログイン不要</p>
+    <ul>
+      <li>ストアのURLを貼るだけで掲載されます。</li>
+      <li>日本語のみのアプリで「英語版がない」と表示が出ても、登録できました。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://kojin.dev/" rel="noopener">個人dev</a></h3>
+    <p class="tag">無料／Google・Twitter・GitHub でログイン</p>
+    <ul>
+      <li>開発者名は、そのまま公開されます。</li>
+      <li>タグは、入力して Enter で追加します。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://izanami.dev/" rel="noopener">izanami</a></h3>
+    <p class="tag">無料</p>
+    <ul>
+      <li>概要は100〜140字です。最初の1文を短く言い切ると、一覧で読まれやすくなります。</li>
+      <li>使えない言葉があります（登録時に「許可されていません」と表示されます）。</li>
+      <li>得意な技術・ツールの欄は、候補にある言葉だけが入ります。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://tsukutta.app/" rel="noopener">Tsukutta</a></h3>
+    <p class="tag">無料／Google で登録</p>
+    <ul>
+      <li>キャッチコピーは100字まで。説明は Markdown で書けます。画像は最大5枚です。</li>
+      <li>公開してすぐ、コメントやリアクションが付くことがありました。</li>
+      <li>ダッシュボードで、アプリごとの閲覧・使用・転換が見られます。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://www.solomaker.dev/" rel="noopener">Solomaker</a></h3>
+    <p class="tag">無料／Google でログイン</p>
+    <ul>
+      <li>初回は、プロフィールの設定から始まります（ユーザーIDはあとから変更できません）。</li>
+      <li>タグは、候補から選びます。開発状況は「正式版」などから選びます。</li>
+      <li>各プロダクトのページで、閲覧数が見られます。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://www.app-village.jp/" rel="noopener">AppVillage</a></h3>
+    <p class="tag">無料／GitHub 認証</p>
+    <ul>
+      <li>X で教えてもらったサイトです。</li>
+      <li>「開発背景」は、「開発者からの手紙」として明朝体で表示されます。</li>
+      <li>「WEB URL」の欄は、Web版アプリ用です。ホームページのURLは入れません。</li>
+    </ul>
+  </div>
+
+  <div class="site">
+    <h3><a href="https://appmikke.com/" rel="noopener">アプリみっけ！</a></h3>
+    <p class="tag">無料／Google で申請／運営確認後に掲載</p>
+    <ul>
+      <li>X で教えてもらったサイトです（ストアURLを入れると情報が取り込まれます）。</li>
+      <li>アプリ紹介の一言は、「○○アプリ」の形で入力します（8〜100字）。</li>
+      <li>承認後は、マイページで閲覧数とストアへの移動数が見られます。</li>
+    </ul>
+  </div>
+
+  <h2 id="more">参考にした記事</h2>
+  <p class="note" style="margin-top:0">無料で掲載できるサービスは、次の記事を参考に選びました。<br>
+  ・<a href="https://qiita.com/tunecode/items/0f5c289efc3ec752bf80" rel="noopener">モバイルアプリを無料で掲載できたサービスまとめ【2026年秋 最新版】（Qiita）</a><br>
+  ・<a href="https://zenn.dev/tunecode/articles/7136de24f1f37e" rel="noopener">個人開発アプリを認知させるのは厳しい。無料で掲載できるサービスで対策する。（Zenn）</a><br>
+  ※2本とも、FindUpApp の運営者（TUNE CODE）が書いた記事です。</p>
+
+  <h2>経過は、Xで発信しています</h2>
+  <p class="note" style="margin-top:0">登録の経過や、数字の結果は、X と YouTube で発信しています。</p>
+  <p><a class="btn" href="https://x.com/najito_najit" rel="noopener">X（@najito_najit）</a><a class="btn sub" href="https://www.youtube.com/@najito_najit" rel="noopener">YouTube</a><a class="btn sub" href="../">道具箱トップへ</a><a class="btn sub" href="../../">アプリ一覧へ</a></p>
+
+  <div class="bye"><img src="../../images/najit_hero.png" width="56" height="83" alt="ナジト"><p>最後まで読んでくれて、ありがとうございます。経過は、Xでお知らせします。</p></div>
+
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></footer>
+</div>
+</body>
+</html>

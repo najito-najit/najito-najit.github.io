@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>個人開発者の道具箱｜ナジトのメモ置き場｜Najit</title>
+<meta name="description" content="個人開発のAndroidアプリを作っているナジトの、道具箱です。アプリの掲載サイトに登録してみた記録、開発ツールの小技、つまずきメモなどを、少しずつ置いていきます。">
+<meta property="og:title" content="個人開発者の道具箱｜ナジトのメモ置き場">
+<meta property="og:description" content="個人開発のアプリの掲載サイトに登録してみた記録や、開発の小技を置いています。">
+<link rel="canonical" href="https://najito-najit.github.io/toolbox/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.7}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:19px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+.hero{display:flex;align-items:center;gap:8px;padding:2px 0 10px}
+.hero img{width:84px;height:auto;flex:none}
+.say{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:10px 14px;flex:1}
+.say:before{content:"";position:absolute;left:-8px;top:36px;width:14px;height:14px;background:var(--card);border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+.say b{display:block;font-size:19px;line-height:1.3}
+.say span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+h1{font-size:21px;line-height:1.4;margin:6px 0 4px}
+.lead{font-size:13.5px;color:var(--muted);margin:0 0 6px}
+h2{font-size:16px;margin:22px 0 8px;display:flex;align-items:center;gap:8px}
+h2:before{content:"";width:7px;height:20px;border-radius:4px;background:var(--orange)}
+.item{display:block;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;margin:0 0 10px;text-decoration:none;color:var(--ink)}
+.item:hover{border-color:var(--orange)}
+.item h3{margin:0 0 2px;font-size:15.5px}
+.item p{margin:2px 0;font-size:13px;color:var(--muted);line-height:1.55}
+.item .meta{font-size:11.5px;color:var(--muted);margin-top:4px}
+.item .go{display:inline-block;margin-top:6px;background:var(--orange);color:#fff;font-weight:800;font-size:12.5px;padding:4px 14px;border-radius:999px}
+.soon{background:transparent;border-style:dashed}
+.soon h3{font-size:14.5px}
+.tagsoon{display:inline-block;font-size:11px;font-weight:800;color:var(--muted);border:1.2px solid var(--muted);border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:1px}
+.note{font-size:12.5px;color:var(--muted);margin:12px 2px}
+.note a{color:var(--orange);font-weight:700}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:999px;margin:2px 4px 2px 0}
+.btn.sub{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.bye{display:flex;gap:10px;align-items:center;margin:22px 0 0}
+.bye img{flex:none;width:56px;height:auto}
+.bye p{margin:0;font-size:13px;color:var(--muted);background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:8px 12px;flex:1}
+footer{border-top:1.5px solid var(--line);margin-top:22px;padding:12px 0 24px;font-size:12px;color:var(--muted);text-align:center}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../">Najit</a><div class="nav"><a href="../#apps">アプリ</a><a href="../#diary">開発日記</a></div></div>
+
+  <section class="hero">
+    <img src="../images/najit_pc.png" width="84" height="103" alt="ナジト（ノートパソコンを使うミカンの被り物のキャラクター）">
+    <div class="say"><b>個人開発者の道具箱</b><span>ナジトのメモ置き場です。やってみて分かったことを、少しずつ置いていきます。</span></div>
+  </section>
+
+  <h1>個人開発者の道具箱</h1>
+  <p class="lead">個人開発のAndroidアプリを作っています。その中で使った道具や、つまずいたこと、やってみた記録を、ここにまとめていきます。</p>
+
+  <h2>いま読めるもの</h2>
+  <a class="item" href="sites/">
+    <h3>アプリの掲載サイト一覧</h3>
+    <p>アプリ4本を、7つの掲載サイトに登録してみた記録です。登録のメモと、インストール元を追えるかどうかを、一覧表にしています。</p>
+    <p class="meta">2026年10月25日 更新</p>
+    <span class="go">読む →</span>
+  </a>
+  <a class="item" href="../#library">
+    <h3>開発ツールの小技（動画）</h3>
+    <p>Claude Code など、開発で使っているツールの小技を、1本30秒前後のショート動画にしています。（トップページの動画ライブラリへ）</p>
+    <span class="go">見る →</span>
+  </a>
+
+  <h2>これから置くもの</h2>
+  <div class="item soon">
+    <h3>Claude Code の小技（記事版）<span class="tagsoon">準備中</span></h3>
+    <p>動画で紹介した小技を、手順つきの文章にします。</p>
+  </div>
+  <div class="item soon">
+    <h3>つまずきメモ<span class="tagsoon">準備中</span></h3>
+    <p>ボタンの表示が思いどおりにならなかった、デバッグで苦戦した、など。原因と直し方を、短く残します。</p>
+  </div>
+  <div class="item soon">
+    <h3>掲載サイトの結果<span class="tagsoon">準備中</span></h3>
+    <p>サイトごとの閲覧数や、インストール元の数字を、表にします。</p>
+  </div>
+
+  <p class="note">読みたい内容や、聞きたいことがあれば、X で教えてください。</p>
+  <p><a class="btn" href="https://x.com/najito_najit" rel="noopener">X（@najito_najit）</a><a class="btn sub" href="https://www.youtube.com/@najito_najit" rel="noopener">YouTube</a><a class="btn sub" href="../">アプリ一覧へ</a></p>
+
+  <div class="bye"><img src="../images/najit_hero.png" width="56" height="83" alt="ナジト"><p>ここに来てくれて、ありがとうございます。道具箱は、少しずつ増やします。</p></div>
+
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></footer>
+</div>
+</body>
+</html>
