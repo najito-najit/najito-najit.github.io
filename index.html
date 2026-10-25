@@ -264,11 +264,12 @@ footer a{color:var(--muted);margin:0 6px}
   <p class="pp">プライバシーポリシー：
     <a href="pitcamera/privacy/">ピッとカメラ</a><a href="karidori/privacy/">カリドリカメラ</a><a href="komameclean/privacy/">こまめクリーン</a><a href="workpicker/privacy/">仕事写真ピッカー</a></p>
 
-  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a></footer>
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="display:block;margin-top:6px;font-size:11px">このサイトは、訪問数を数えるために、Cloudflare Web Analytics（クッキーを使わない解析）を使っています。個人は特定しません。</span></footer>
 </div>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.play');if(!a)return;e.preventDefault();var long=a.getAttribute('data-kind')==='long';var card=a.closest('.vid');var box=document.createElement('div');box.className='vframe '+(long?'long':'short');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);if(a.classList.contains('vthumb')){card.classList.add('playing');a.parentNode.replaceChild(box,a);}else{var act=a.parentNode;act.parentNode.insertBefore(box,act);act.removeChild(a);}});
 </script>
 <script src="utm.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
