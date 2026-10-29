@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code tips (copy-paste prompts) | Najit</title>
+<meta name="description" content="Prompts you can paste straight into Claude Code: a chat-naming rule that shows when each chat happened, and a one-step handoff to a new chat.">
+<meta property="og:title" content="Claude Code tips (copy-paste prompts) | Najit">
+<meta property="og:description" content="Copy-paste prompts: chat naming and handoff to a new chat.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://najito-najit.github.io/en/toolbox/claudecode/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://najito-najit.github.io/en/toolbox/claudecode/">
+<link rel="alternate" hreflang="ja" href="https://najito-najit.github.io/toolbox/claudecode/">
+<link rel="alternate" hreflang="en" href="https://najito-najit.github.io/en/toolbox/claudecode/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 2px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:18px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+h1{font-size:19px;line-height:1.4;margin:8px 0 0}
+.upd{font-size:11.5px;color:var(--muted);margin:0 0 6px}
+.tip{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;margin:8px 0}
+.tip h2{font-size:15px;line-height:1.4;margin:0 0 4px;display:flex;gap:8px;align-items:flex-start}
+.tip h2 .no{flex:none;background:var(--orange);color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:13px;font-weight:800;margin-top:1px}
+.sub{font-size:12px;color:var(--muted);margin:0 0 6px 30px}
+.copybox{background:#fff;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.copybox .lbl{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#F1E3C2;padding:3px 6px 3px 10px;font-size:11px;font-weight:700;color:var(--muted)}
+.copybox pre{margin:0;padding:6px 10px;white-space:pre-wrap;word-break:break-word;font:inherit;font-size:13px;font-weight:700;line-height:1.55;user-select:all}
+.cp{flex:none;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:3px 14px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.cp.done{background:#1f9d55}
+.btn{display:inline-block;background:transparent;color:var(--ink);border:1.5px solid var(--ink);text-decoration:none;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px;margin:4px 4px 0 0}
+footer{border-top:1.5px solid var(--line);margin-top:10px;padding:8px 0 18px;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../../">Home</a><a href="../../../toolbox/claudecode/" hreflang="ja" style="border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px">日本語</a></div></div>
+  <h1>Claude Code tips (copy and paste)</h1>
+  <p class="upd">Updated October 30, 2026</p>
+
+  <section class="tip" id="start">
+    <h2><span class="no">1</span>When a chat starts: name it so you can tell when it happened</h2>
+    <p class="sub">e.g. AppDev_261016~29 (started on Oct 16, ended on the 29th)</p>
+    <div class="copybox"><div class="lbl"><span>Paste into Claude Code (it saves this to memory)</span><button type="button" class="cp" aria-label="Copy this text">Copy</button></div><pre>Save the following rule to memory.
+When a chat starts, rename it to "Summary_yymmdd~??".
+- Summary: a short description of what the chat is for.
+- yymmdd: the start date (6 digits, e.g. 261016).
+- "??": leave it as is until the chat ends.
+  e.g. AppDev_261016~??</pre></div>
+  </section>
+
+  <section class="tip" id="end">
+    <h2><span class="no">2</span>When a chat ends: finish the handoff in one step</h2>
+    <p class="sub">Save this rule to memory. When you say you're ending the chat, Claude runs it; paste the prompt it writes into the new chat.</p>
+    <div class="copybox"><div class="lbl"><span>Paste into Claude Code (it saves this to memory)</span><button type="button" class="cp" aria-label="Copy this text">Copy</button></div><pre>Save the following rule to memory.
+When I tell you to end the chat, do the following:
+- Create and save a handoff file.
+- Also write a prompt that tells a new chat to read it.
+- Change the "??" in the chat name to the end date (day only).
+  e.g. AppDev_261016~?? → AppDev_261016~29</pre></div>
+  </section>
+
+  <p><a class="btn" href="../../">Back to home</a></p>
+  <footer>A personal record of how I use it (Claude Code is a tool by Anthropic; this is an unofficial page, not affiliated with Anthropic).<br>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">Contact</a><br><span style="font-size:10.5px">This site uses Cloudflare Web Analytics (cookie-free) to count visits.</span></footer>
+</div>
+<script>
+document.querySelectorAll('.copybox').forEach(function(box){
+  var btn=box.querySelector('.cp'),pre=box.querySelector('pre');
+  btn.addEventListener('click',function(){
+    var text=pre.innerText;
+    function ok(){btn.textContent='Copied';btn.classList.add('done');setTimeout(function(){btn.textContent='Copy';btn.classList.remove('done')},2000)}
+    function fallback(){
+      var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');ok()}catch(e){btn.textContent='Select and copy'}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback)}else{fallback()}
+  });
+});
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
