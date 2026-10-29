@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>個人開発者の道具箱｜Claude Codeの小ネタ（コピペ指示文）｜Najit</title>
+<meta name="description" content="Claude Code に貼るだけで使える指示文。新しいチャットへの引き継ぎと、チャット名で「いつ頃のチャットか」を分かるようにする決まり。">
+<meta property="og:title" content="個人開発者の道具箱｜Claude Codeの小ネタ">
+<meta property="og:description" content="コピペで使える指示文。引き継ぎと、チャット名の付け方。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://najito-najit.github.io/toolbox/claudecode/">
+<meta property="og:image" content="https://najito-najit.github.io/images/ogp_toolbox.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://najito-najit.github.io/toolbox/claudecode/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 2px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:18px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+h1{font-size:19px;line-height:1.4;margin:8px 0 0}
+.upd{font-size:11.5px;color:var(--muted);margin:0 0 6px}
+.tip{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;margin:8px 0}
+.tip h2{font-size:15px;line-height:1.4;margin:0 0 4px;display:flex;gap:8px;align-items:flex-start}
+.tip h2 .no{flex:none;background:var(--orange);color:#fff;width:22px;height:22px;border-radius:50%;text-align:center;line-height:22px;font-size:13px;font-weight:800;margin-top:1px}
+.sub{font-size:12px;color:var(--muted);margin:0 0 6px 30px}
+.copybox{background:#fff;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.copybox .lbl{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#F1E3C2;padding:3px 6px 3px 10px;font-size:11px;font-weight:700;color:var(--muted)}
+.copybox pre{margin:0;padding:6px 10px;white-space:pre-wrap;word-break:break-word;font:inherit;font-size:13px;font-weight:700;line-height:1.55;user-select:all}
+.cp{flex:none;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:3px 14px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.cp.done{background:#1f9d55}
+.btn{display:inline-block;background:transparent;color:var(--ink);border:1.5px solid var(--ink);text-decoration:none;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px;margin:4px 4px 0 0}
+footer{border-top:1.5px solid var(--line);margin-top:10px;padding:8px 0 18px;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../">道具箱</a></div></div>
+  <h1>Claude Codeの小ネタ（コピペで使えます）</h1>
+  <p class="upd">2026年10月29日 更新</p>
+
+  <section class="tip" id="start">
+    <h2><span class="no">1</span>チャット開始時のルール：チャット名で、いつ頃か分かる</h2>
+    <p class="sub">例：アプリ開発_261016～29（10/16に始めて、29日に終了）</p>
+    <div class="copybox"><div class="lbl"><span>Claude Code に貼る文（メモリに保存されます）</span><button type="button" class="cp" aria-label="この文をコピーする">コピー</button></div><pre>次の決まりを、メモリに保存して。
+チャットを始めたら、チャット名を「概要_yymmdd～??」にする。
+・概要：そのチャットで何をするかを、短く入れる。
+・yymmdd：始めた日（年月日の6桁。例：261016）。
+・「??」：終了日が決まるまで、そのまま入れておく。
+　例：アプリ開発_261016～??</pre></div>
+  </section>
+
+  <section class="tip" id="end">
+    <h2><span class="no">2</span>チャット終了時のルール：引き継ぎまで一度で終わる</h2>
+    <p class="sub">メモリに保存しておく決まりです。チャットを終わると指示したときに実行してもらい、出てきた指示文を新しいチャットに貼ります。</p>
+    <div class="copybox"><div class="lbl"><span>Claude Code に貼る文（メモリに保存されます）</span><button type="button" class="cp" aria-label="この文をコピーする">コピー</button></div><pre>次の決まりを、メモリに保存して。
+チャットを終わると指示を受けたら、下記を実行して。
+・引き継ぎファイルを作って保存する。
+・それを新しいチャットに読ませる指示文も書く。
+・チャット名の「??」を、終了日（日だけ）に変える。
+　例：アプリ開発_261016～?? → アプリ開発_261016～29</pre></div>
+  </section>
+
+  <p><a class="btn" href="../">道具箱へ戻る</a></p>
+  <footer>個人の使い方の記録です（Claude Code は Anthropic 社のツールで、同社とは関係のない非公式のページ）。<br>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="font-size:10.5px">訪問数を数えるため、Cloudflare Web Analytics（クッキーを使わない解析）を使っています。</span></footer>
+</div>
+<script>
+document.querySelectorAll('.copybox').forEach(function(box){
+  var btn=box.querySelector('.cp'),pre=box.querySelector('pre');
+  btn.addEventListener('click',function(){
+    var text=pre.innerText;
+    function ok(){btn.textContent='コピーしました';btn.classList.add('done');setTimeout(function(){btn.textContent='コピー';btn.classList.remove('done')},2000)}
+    function fallback(){
+      var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');ok()}catch(e){btn.textContent='選んでコピーしてください'}
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(ok,fallback)}else{fallback()}
+  });
+});
+</script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
