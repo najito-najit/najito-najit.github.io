@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>オートだと、いつも少し暗い。それが嫌で、カメラアプリを自分で作った話｜Najit</title>
+<meta name="description" content="純正カメラのオートがいつも少し暗く、写真と動画でも明るさが違う。毎回の調整が面倒で、カメラ設定を保存してワンタップで切り替えられるアプリを、プログラミング未経験から作りました。アプリなしで試せることも。">
+<meta property="og:title" content="スマホのカメラ設定を保存したくて、アプリを作った話｜Najit">
+<meta property="og:description" content="オートに「＋目」「－目」。写真用・動画用の設定をワンタップで切り替え。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://najito-najit.github.io/guide/camera-settings/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://najito-najit.github.io/guide/camera-settings/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic UI","Hiragino Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.85}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 2px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:18px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+.hero{display:flex;align-items:center;gap:14px;margin:12px 0 14px}
+.hero img{width:110px;height:auto;flex:none}
+@media(min-width:560px){.hero img{width:150px}}
+h1{font-size:20px;line-height:1.5;margin:0 0 2px}
+.upd{font-size:12px;color:var(--muted);margin:0}
+article{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:6px 18px 14px}
+h2{font-size:17px;line-height:1.5;margin:22px 0 6px;padding-left:10px;border-left:5px solid var(--orange)}
+p{margin:8px 0;font-size:15px}
+ul{margin:6px 0 6px;padding-left:1.3em;font-size:15px}
+li{margin:4px 0}
+.point{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;margin:10px 0}
+.point p{margin:4px 0}
+.auto{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;font-size:14.5px}
+.auto b{background:var(--orange);color:#fff;border-radius:999px;padding:0 10px;font-size:13px;text-align:center}
+figure{margin:14px auto;text-align:center}
+figure img{width:100%;max-width:300px;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(70,40,15,.15)}
+figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.pick img{max-width:440px;border:1.5px solid var(--line);border-radius:10px}
+.pick-s img{max-width:320px}
+.cmp{margin:14px 0}
+.cmp-t{margin:10px 0 4px;font-size:13px;font-weight:800;color:var(--muted)}
+.cmp .row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.cmp figure{margin:0}
+.cmp figure img{max-width:none;border-radius:8px;display:block}
+.cmp figcaption{font-weight:800;color:var(--ink);font-size:12.5px;margin-top:2px;line-height:1.3}
+.cmp-n{font-size:12px;color:var(--muted);margin:6px 0 0}
+.end{display:flex;align-items:center;gap:12px;margin:18px 0 0}
+.end .chara{width:100px;height:auto;flex:none}
+.feat{flex:1;display:block;text-decoration:none;text-align:center;color:var(--orange);font-weight:800;font-size:13px}
+.feat img{width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(70,40,15,.18);display:block}
+.feat span{display:inline-block;margin-top:6px}
+.btn{display:inline-block;background:transparent;color:var(--ink);border:1.5px solid var(--ink);text-decoration:none;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px;margin:12px 4px 0 0}
+footer{border-top:1.5px solid var(--line);margin-top:14px;padding:8px 0 18px;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../../">TOP</a><a href="../../#apps">アプリ</a><a href="../../toolbox/">道具箱</a></div></div>
+
+  <div class="hero">
+    <img src="../../images/najit_pc.png" alt="パソコンに向かうナジト">
+    <div>
+      <h1>オートだと、いつも少し暗い。<br>それが嫌で、カメラアプリを自分で作った話</h1>
+      <p class="upd">2026年10月30日 時点</p>
+    </div>
+  </div>
+
+  <article>
+    <h2>毎回、明るさを変えていた</h2>
+    <p>スマホの純正カメラ、オートのままだと、私としてはいつもちょっと暗め。なので起動したら毎回、明るさを変更していました。</p>
+    <p>動画はもっと暗め。写真と動画で明るさが違うので、モードを切り替えると明るさの修正作業が発生。なかなか手間でした。</p>
+
+    <h2>アプリを入れる前に、試してほしいこと</h2>
+    <p>同じことで困っている方は、先にお使いのカメラの設定画面を、一度ひととおり見てみてください。カメラアプリによっては、明るさなどを残しておける項目があります。</p>
+
+    <h2>それでも面倒だったこと</h2>
+    <p>私は写真も動画も撮るので、それぞれで毎回合わせ直すのがとにかく面倒でした。撮る物によって、明るめにしたい日もあれば、少し暖かい色にしたい日もあります。</p>
+    <p>それなら、よく使う設定をボタンに入れておいて、1回押すだけで呼び出せるカメラを作ろう、と。プログラミングは未経験で、AIに聞きながら100日かけて作ったのが「ピッとカメラ」です。</p>
+    <p>実は以前、Androidアプリ作りに挑戦したことがあるのですが、挫折。今回は十数年ぶりのリベンジでした。</p>
+
+    <h2>いちばん推したいのは、オートの明暗と寒暖</h2>
+    <p>オートに、明暗と寒暖を付けました。ちょうどいい明るさや色味は人によって違うから、自分にとってベストなオートがあるとうれしい。そう思って作った機能です。</p>
+    <figure class="pick pick-s"><img src="img/pick_auto.jpg" alt="撮影画面の明るさ（オート暗・オート・オート明）と色温度（オート寒・オート・オート暖）のボタン"><figcaption>撮影画面の下に、オートの明暗・寒暖が並びます</figcaption></figure>
+    <p>場面に合わせて自動で調整してくれるオートのよさはそのまま、好みの側へ少しだけ寄せられます。私の「いつもちょっと暗め」には、オート明がそのまま答えになりました。</p>
+    <div class="cmp">
+      <p class="cmp-t">明るさ</p>
+      <div class="row"><figure><img src="img/cmp_dark.jpg" alt="オート暗で撮った画面"><figcaption>オート暗</figcaption></figure><figure><img src="img/cmp_auto.jpg" alt="オートで撮った画面"><figcaption>オート</figcaption></figure><figure><img src="img/cmp_bright.jpg" alt="オート明で撮った画面"><figcaption>オート明</figcaption></figure></div>
+      <p class="cmp-t">色味</p>
+      <div class="row"><figure><img src="img/cmp_cool.jpg" alt="オート寒で撮った画面"><figcaption>オート寒</figcaption></figure><figure><img src="img/cmp_auto.jpg" alt="オートで撮った画面"><figcaption>オート</figcaption></figure><figure><img src="img/cmp_warm.jpg" alt="オート暖で撮った画面"><figcaption>オート暖</figcaption></figure></div>
+      <p class="cmp-n">夜の少し暗めの部屋で、同じカップを撮った画面です（切り取りと縮小のみ、色や明るさの加工なし）。下の段で、押しているボタンが分かります。</p>
+    </div>
+    <p>寄せる強さは、弱・中・強の3段階。ボタンごとに決められるので、写真用は弱、暗く写りやすい動画用は強、のように分けておけます。（色味の作り方は8回やり直しました）</p>
+    <figure class="pick"><img src="img/pick_offset.jpg" alt="設定画面のオート強度（弱・中・強）"><figcaption>設定画面の「オート強度」。ボタンごとに弱・中・強を選べます</figcaption></figure>
+
+    <h2>設定はボタンに入れて、ワンタップで</h2>
+    <p>明るさ、色温度、オートの種類、拡大率などを、ボタン（プリセット）ごとに保存できます。写真用か動画用かを選べて、名前も9文字まで付けられます。撮影画面でボタンを押せば、その設定に切り替わります。</p>
+    <p>ちなみに名前を付けられるようにしたのは、公開してから。約1か月半後のアップデートで足しました。</p>
+    <figure><img src="img/store_05.jpg" alt="プリセットボタン：無料で4枠、プレミアムで8枠"><figcaption>無料で4つ、プレミアム（買い切り）で8つ</figcaption></figure>
+    <p>ボタンは無料で4つ、プレミアム（買い切り）で8つ。私は4〜8つあれば足りると思っていますが、もっと欲しい方がいたら、ぜひ教えてください～</p>
+
+    <h2>作ってみて気づいた、フラッシュの文字ボタン</h2>
+    <p>それまで使っていたカメラは、フラッシュのアイコンが隠れていて、パッとライトが出せませんでした。しかもアイコンだと、強制・オート・禁止・ライトのどれなのか分かりづらい。</p>
+    <p>なのでピッとカメラは、撮影画面の上に 強制・オート・なし・ライト を文字で並べました。アイコンより文字のほうが分かるし、1タップで切り替わります。</p>
+    <figure class="pick"><img src="img/pick_flash.jpg" alt="撮影画面の上の発光ボタン（強制・オート・なし・ライト）"><figcaption>撮影画面の上に、発光の4つが文字で並びます</figcaption></figure>
+
+    <h2>おすすめの使い方</h2>
+    <p>いちばんよく使う設定を、1番目のボタンに入れておくこと。迷ったらまずそれを押す、だけで、いつもの明るさで撮れます。</p>
+
+    <h2>ぜひ意見をください</h2>
+    <p>ひとりで作っているアプリなので、使った方の声がいちばんの手がかりです。ここが使いにくい、こんな設定がほしい、なんでも大歓迎です。</p>
+    <p>オートで撮って「あと少しだけ明るければ・・・」と思ったこと、ありませんか？</p>
+  </article>
+
+  <div class="end">
+    <img class="chara" src="img/najit_wave.png" alt="手を振るナジト">
+    <a class="feat" href="https://play.google.com/store/apps/details?id=app.najit.pitcamera&amp;referrer=utm_source%3Dnajit_site%26utm_medium%3Darticle%26utm_campaign%3Dcamera_settings_ja"><img src="img/pitcamera_feature.jpg" alt="ピッとカメラ（Google Play で見る）"><span>Google Play で見る</span></a>
+  </div>
+
+  <p><a class="btn" href="../../">トップへ戻る</a></p>
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="font-size:10.5px">訪問数を数えるため、Cloudflare Web Analytics（クッキーを使わない解析）を使っています。</span></footer>
+</div>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
