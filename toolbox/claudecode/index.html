@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>個人開発者の道具箱｜Claude Codeの小ネタ（コピペ指示文）｜Najit</title>
-<meta name="description" content="Claude Code に貼るだけで使える指示文。新しいチャットへの引き継ぎと、チャット名で「いつ頃のチャットか」を分かるようにする決まり。">
+<meta name="description" content="Claude Code に貼るだけで使える指示文。チャット名の決まり、新しいチャットへの引き継ぎ、消すか迷うファイルは保留フォルダへ、方針から外れそうなときの秘書チェック、時刻を確かめてから聞く決まり。">
 <meta property="og:title" content="個人開発者の道具箱｜Claude Codeの小ネタ">
-<meta property="og:description" content="コピペで使える指示文。引き継ぎと、チャット名の付け方。">
+<meta property="og:description" content="コピペで使える指示文。チャット名・引き継ぎ・保留フォルダ・秘書チェック・時刻の確認。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://najito-najit.github.io/toolbox/claudecode/">
 <meta property="og:image" content="https://najito-najit.github.io/images/ogp_toolbox.png">
@@ -42,7 +42,7 @@ footer a{color:var(--muted);margin:0 6px}
 <div class="wrap">
   <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../">道具箱</a><a href="../../en/toolbox/claudecode/" hreflang="en" style="border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px">EN</a></div></div>
   <h1>Claude Codeの小ネタ（コピペで使えます）</h1>
-  <p class="upd">2026年10月29日 更新</p>
+  <p class="upd">2026年10月31日 更新</p>
 
   <section class="tip" id="start">
     <h2><span class="no">1</span>チャット開始時のルール：チャット名で、いつ頃か分かる</h2>
@@ -64,6 +64,35 @@ footer a{color:var(--muted);margin:0 6px}
 ・それを新しいチャットに読ませる指示文も書く。
 ・チャット名の「??」を、終了日（日だけ）に変える。
 　例：アプリ開発_261016～?? → アプリ開発_261016～29</pre></div>
+  </section>
+
+  <section class="tip" id="hold">
+    <h2><span class="no">3</span>消すか迷うファイルは、消さずに「保留」フォルダへ</h2>
+    <p class="sub">削除していいか毎回聞かれるより、いったん移しておいて、あとで自分で決めるほうが楽でした。</p>
+    <div class="copybox"><div class="lbl"><span>Claude Code に貼る文（メモリに保存されます）</span><button type="button" class="cp" aria-label="この文をコピーする">コピー</button></div><pre>次の決まりを、メモリに保存して。
+消すか迷うファイル（使えないかもしれない写真、重複したファイル、用途が分からないファイルなど）は、削除しない。
+・その作業フォルダの中に「保留」フォルダを作って、そこへ移す。
+・移したものは、一覧で報告する。
+・あなたが作った一時ファイルは対象外。</pre></div>
+  </section>
+
+  <section class="tip" id="secretary">
+    <h2><span class="no">4</span>方針から外れそうなとき、先にひと言もらう（秘書チェック）</h2>
+    <p class="sub">作業は止めずに、1〜2行で指摘してもらう決まりです。自分で決めた方針（例：作る前に需要を確かめる）も、一緒にメモリに入れておくと効きます。</p>
+    <div class="copybox"><div class="lbl"><span>Claude Code に貼る文（メモリに保存されます）</span><button type="button" class="cp" aria-label="この文をコピーする">コピー</button></div><pre>次の決まりを、メモリに保存して。
+私が決めた方針から外れそうなときは、あなたから先に指摘して。
+・作業は止めず、1〜2行で言う。
+・反対するときは、代わりの案も必ず出す。
+・同じことは、同じチャットで2回言わない。
+・「承知で進める」と言われたら、それ以上は言わない。</pre></div>
+  </section>
+
+  <section class="tip" id="time">
+    <h2><span class="no">5</span>「●時に○○しましたか？」の前に、時刻を確かめてもらう</h2>
+    <p class="sub">まだその時刻になっていないのに「しましたか？」と聞かれる、を防ぎます。</p>
+    <div class="copybox"><div class="lbl"><span>Claude Code に貼る文（メモリに保存されます）</span><button type="button" class="cp" aria-label="この文をコピーする">コピー</button></div><pre>次の決まりを、メモリに保存して。
+「●時に○○しましたか？」のように、時刻が関係することを聞く前に、今の時刻を確かめる。
+まだその時刻になっていなければ、聞かない。</pre></div>
   </section>
 
   <p><a class="btn" href="../">道具箱へ戻る</a></p>
