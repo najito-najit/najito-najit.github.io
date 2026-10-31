@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto was always a little too dark, so I built my own camera app | Najit</title>
+<meta name="description" content="My phone camera's Auto always came out a little dark, and photos and videos didn't even match. Tired of fixing it every time, I built a camera app that saves settings and switches them in one tap, with no coding background. Plus what to try before installing anything.">
+<meta property="og:title" content="I wanted to save my camera settings, so I built an app | Najit">
+<meta property="og:description" content="Auto, nudged a little brighter or warmer. Photo and video settings, one tap away.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://najito-najit.github.io/en/guide/camera-settings/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://najito-najit.github.io/en/guide/camera-settings/">
+<link rel="alternate" hreflang="ja" href="https://najito-najit.github.io/guide/camera-settings/">
+<link rel="alternate" hreflang="en" href="https://najito-najit.github.io/en/guide/camera-settings/">
+<style>
+:root{--bg:#F7ECD5;--card:#FFF9EC;--ink:#46280F;--muted:#7A5B3C;--orange:#E8751A;--line:#E6D5AE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.7}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:10px 0 2px}
+.logo{font-weight:800;letter-spacing:1px;color:var(--orange);font-size:18px;text-decoration:none}
+.nav a{margin-left:14px;color:var(--ink);text-decoration:none;font-size:13px;font-weight:700}
+.hero{display:flex;align-items:center;gap:14px;margin:12px 0 14px}
+.hero img{width:110px;height:auto;flex:none}
+@media(min-width:560px){.hero img{width:150px}}
+h1{font-size:20px;line-height:1.4;margin:0 0 2px}
+.upd{font-size:12px;color:var(--muted);margin:0}
+article{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:6px 18px 14px}
+h2{font-size:17px;line-height:1.4;margin:22px 0 6px;padding-left:10px;border-left:5px solid var(--orange)}
+p{margin:8px 0;font-size:15.5px}
+figure{margin:14px auto;text-align:center}
+figure img{width:100%;max-width:300px;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(70,40,15,.15)}
+figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+.pick img{max-width:440px;border:1.5px solid var(--line);border-radius:10px}
+.pick-s img{max-width:320px}
+.cmp{margin:14px 0}
+.cmp-t{margin:10px 0 4px;font-size:13px;font-weight:800;color:var(--muted)}
+.cmp .row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.cmp figure{margin:0}
+.cmp figure img{max-width:none;border-radius:8px;display:block}
+.cmp figcaption{font-weight:800;color:var(--ink);font-size:12.5px;margin-top:2px;line-height:1.3}
+.cmp-n{font-size:12px;color:var(--muted);margin:6px 0 0}
+.end{display:flex;align-items:center;gap:12px;margin:18px 0 0}
+.end .chara{width:100px;height:auto;flex:none}
+.feat{flex:1;display:block;text-decoration:none;text-align:center;color:var(--orange);font-weight:800;font-size:13px}
+.feat img{width:100%;height:auto;border-radius:12px;box-shadow:0 2px 8px rgba(70,40,15,.18);display:block}
+.feat span{display:inline-block;margin-top:6px}
+.btn{display:inline-block;background:transparent;color:var(--ink);border:1.5px solid var(--ink);text-decoration:none;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px;margin:12px 4px 0 0}
+footer{border-top:1.5px solid var(--line);margin-top:14px;padding:8px 0 18px;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+footer a{color:var(--muted);margin:0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="logo" href="../../">Najit</a><div class="nav"><a href="../../">Home</a><a href="../../#apps">Apps</a><a href="../../../guide/camera-settings/" hreflang="ja" style="border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px">日本語</a></div></div>
+
+  <div class="hero">
+    <img src="../../../images/najit_pc.png" alt="Najit working at a computer">
+    <div>
+      <h1>Auto was always a little too dark,<br>so I built my own camera app</h1>
+      <p class="upd">As of October 31, 2026</p>
+    </div>
+  </div>
+
+  <article>
+    <h2>I changed the brightness every single time</h2>
+    <p>On Auto, my phone's built-in camera always looked a bit too dark to me. So every time I opened it, I bumped up the brightness.</p>
+    <p>Video was even darker. Photos and videos didn't match, so switching modes meant fixing the brightness all over again. It was a real chore.</p>
+
+    <h2>Before you install anything, try this</h2>
+    <p>If you have the same problem, take a quick look through your camera app's settings first. Some camera apps let you keep things like brightness the way you left them.</p>
+
+    <h2>What still bugged me</h2>
+    <p>I shoot both photos and videos, and readjusting each one every time drove me crazy. Some days I want things brighter, other days a little warmer, depending on what I'm shooting.</p>
+    <p>So I thought: why not a camera where my favorite settings live on buttons, and one tap brings them back? I had never programmed before. I built it over 100 days, asking AI along the way, and that became Preset Camera (ピッとカメラ in Japan).</p>
+    <p>Actually, I had tried making an Android app once before and gave up. This was my comeback after more than ten years.</p>
+
+    <h2>My favorite part: Auto, nudged brighter or warmer</h2>
+    <p>I added "darker / brighter" and "cooler / warmer" to Auto. The right brightness and color are different for everyone, so I wanted each person to have their own best Auto.</p>
+    <figure class="pick pick-s"><img src="img/pick_auto.jpg" alt="Buttons on the camera screen: AUTO−, AUTO, AUTO+ for brightness and AUTO C, AUTO, AUTO W for white balance"><figcaption>The Auto brightness and color buttons sit at the bottom of the camera screen</figcaption></figure>
+    <p>You keep everything that's good about Auto, since it still adjusts to each scene, and just lean it a little toward what you like. For my "always a bit dark" problem, AUTO+ was the answer.</p>
+    <div class="cmp">
+      <p class="cmp-t">Brightness</p>
+      <div class="row"><figure><img src="img/cmp_dark.jpg" alt="Screen shot with AUTO−"><figcaption>AUTO−</figcaption></figure><figure><img src="img/cmp_auto.jpg" alt="Screen shot with AUTO"><figcaption>AUTO</figcaption></figure><figure><img src="img/cmp_bright.jpg" alt="Screen shot with AUTO+"><figcaption>AUTO+</figcaption></figure></div>
+      <p class="cmp-t">Color</p>
+      <div class="row"><figure><img src="img/cmp_cool.jpg" alt="Screen shot with AUTO C"><figcaption>AUTO C</figcaption></figure><figure><img src="img/cmp_auto.jpg" alt="Screen shot with AUTO"><figcaption>AUTO</figcaption></figure><figure><img src="img/cmp_warm.jpg" alt="Screen shot with AUTO W"><figcaption>AUTO W</figcaption></figure></div>
+      <p class="cmp-n">The same cup in a dim room at night (cropped and resized only, no color or brightness edits). The buttons at the bottom show which one is on.</p>
+    </div>
+    <p>You can set how far it leans: low, mid, or high. It's set per button, so you can use low for photos and high for videos, which tend to come out darker. (I redid the way the colors work 8 times.)</p>
+    <figure class="pick"><img src="img/pick_offset.jpg" alt="Auto strength setting (LOW, MID, HIGH) on the settings screen"><figcaption>"Auto strength" on the settings screen. Pick low, mid, or high for each button</figcaption></figure>
+
+    <h2>Save it to a button, switch in one tap</h2>
+    <p>Each button (preset) can save brightness, white balance, the kind of Auto, zoom, and more. You choose photo or video for each one, and you can give it a name of up to 9 characters. Tap a button on the camera screen and you're on those settings.</p>
+    <p>Fun fact: naming came later. I added it in an update about a month and a half after launch.</p>
+    <figure><img src="img/store_05.jpg" alt="Preset buttons: 4 slots free, 8 with Premium"><figcaption>4 free, 8 with Premium (one-time purchase)</figcaption></figure>
+    <p>You get 4 buttons for free and 8 with Premium (a one-time purchase). I think 4 to 8 is plenty, but if you want more, please let me know!</p>
+
+    <h2>Something I noticed while building it: flash as words</h2>
+    <p>In the camera I used before, the flash icon was tucked away, so I couldn't turn on the light quickly. And as an icon, it was hard to tell whether it was on, auto, off, or torch.</p>
+    <p>So in Preset Camera, ON, AUTO, OFF, and TORCH are spelled out across the top of the camera screen. Words are clearer than icons, and one tap switches them.</p>
+    <figure class="pick"><img src="img/pick_flash.jpg" alt="Flash buttons at the top of the camera screen (ON, AUTO, OFF, TORCH)"><figcaption>The four flash options are spelled out at the top of the camera screen</figcaption></figure>
+
+    <h2>How I use it</h2>
+    <p>Put the settings you use most on the first button. When in doubt, tap that one, and you'll get your usual look.</p>
+
+    <h2>I'd love your feedback</h2>
+    <p>I make this app on my own, so hearing from people who use it helps more than anything. Hard to use here? Wish it had some setting? Anything is welcome.</p>
+    <p>Have you ever shot on Auto and thought, "if only it were just a little brighter..."?</p>
+  </article>
+
+  <div class="end">
+    <img class="chara" src="img/najit_wave.png" alt="Najit waving">
+    <a class="feat" href="https://play.google.com/store/apps/details?id=app.najit.pitcamera&amp;hl=en&amp;referrer=utm_source%3Dnajit_site%26utm_medium%3Darticle%26utm_campaign%3Dcamera_settings_en"><img src="img/pitcamera_feature.jpg" alt="Preset Camera (view on Google Play)"><span>View on Google Play</span></a>
+  </div>
+
+  <p><a class="btn" href="../../">Back to home</a></p>
+  <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="font-size:10.5px">To count visits, this site uses Cloudflare Web Analytics (cookie-free analytics).</span></footer>
+</div>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
