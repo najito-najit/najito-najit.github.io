@@ -55,6 +55,13 @@ figcaption{font-size:12px;color:var(--muted);margin-top:4px}
 .btn{display:inline-block;background:transparent;color:var(--ink);border:1.5px solid var(--ink);text-decoration:none;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px;margin:12px 4px 0 0}
 footer{border-top:1.5px solid var(--line);margin-top:14px;padding:8px 0 18px;font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
 footer a{color:var(--muted);margin:0 6px}
+.yt{margin:16px auto}
+.yt a,.yt .vf{position:relative;display:block;margin:0 auto;width:200px;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000;line-height:0;box-shadow:0 2px 8px rgba(70,40,15,.18)}
+.yt .vf{width:240px}
+.yt a img{width:100%;height:100%;max-width:none;object-fit:cover;border-radius:0;box-shadow:none}
+.yt .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:34px;line-height:1;background:rgba(0,0,0,.16);text-shadow:0 1px 6px rgba(0,0,0,.65)}
+.yt a:hover .vplay{background:rgba(0,0,0,.05)}
+.yt iframe{width:100%;height:100%;border:0}
 </style>
 </head>
 <body>
@@ -93,6 +100,7 @@ footer a{color:var(--muted);margin:0 6px}
       <div class="row"><figure><img src="img/cmp_cool.jpg" alt="オート寒で撮った画面"><figcaption>オート寒</figcaption></figure><figure><img src="img/cmp_auto.jpg" alt="オートで撮った画面"><figcaption>オート</figcaption></figure><figure><img src="img/cmp_warm.jpg" alt="オート暖で撮った画面"><figcaption>オート暖</figcaption></figure></div>
       <p class="cmp-n">夜の少し暗めの部屋で、同じカップを撮った画面です（切り取りと縮小のみ、色や明るさの加工なし）。下の段で、押しているボタンが分かります。</p>
     </div>
+    <figure class="yt"><a class="ytplay" href="https://www.youtube.com/shorts/x5a2LZTsels" data-id="x5a2LZTsels" data-title="オートの状態をあなたの「ちょうどいい」に調整。Androidのカメラアプリを作りました" aria-label="動画を再生：オートの明暗と寒暖（23秒）"><img src="img/s017_thumb.jpg" width="200" height="356" alt="動画の最初の場面：カメラのオート機能、もうちょっと修正したくない？" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a><figcaption>動きでも見られます（23秒・押すとここで再生）</figcaption></figure>
     <p>寄せる強さは、弱・中・強の3段階。ボタンごとに決められるので、写真用は弱、暗く写りやすい動画用は強、のように分けておけます。（色味の作り方は8回やり直しました）</p>
     <figure class="pick"><img src="img/pick_offset.jpg" alt="設定画面のオート強度（弱・中・強）"><figcaption>設定画面の「オート強度」。ボタンごとに弱・中・強を選べます</figcaption></figure>
 
@@ -123,6 +131,9 @@ footer a{color:var(--muted);margin:0 6px}
   <p><a class="btn" href="../../">トップへ戻る</a></p>
   <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="font-size:10.5px">訪問数を数えるため、Cloudflare Web Analytics（クッキーを使わない解析）を使っています。</span></footer>
 </div>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.ytplay');if(!a)return;e.preventDefault();var box=document.createElement('div');box.className='vf';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);a.parentNode.replaceChild(box,a);});
+</script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
