@@ -32,6 +32,18 @@ h2:before{content:"";width:7px;height:20px;border-radius:4px;background:var(--or
 .app h3{margin:0;font-size:14.5px;line-height:1.35}
 .app p{margin:3px 0 8px;font-size:11.5px;color:var(--muted);line-height:1.45}
 .app .btn{margin-top:auto}
+.grid.apps{grid-template-columns:1fr}
+@media(min-width:600px){.grid.apps{grid-template-columns:1fr 1fr}}
+.app.wide{flex-direction:row;align-items:stretch;gap:10px;padding:12px}
+.app.wide .info{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center}
+.app.wide .info .btn{margin-top:auto}
+.app.wide .appvid,.app.wide .avf{flex:none;align-self:center;width:118px;margin:0}
+@media(min-width:420px) and (max-width:599px){.app.wide .appvid,.app.wide .avf{width:140px}}
+.app .appvid{position:relative;display:block;width:110px;aspect-ratio:9/16;margin:0 auto 8px;border-radius:10px;overflow:hidden;background:#000;line-height:0;box-shadow:0 2px 6px rgba(70,40,15,.18)}
+.app .appvid img{width:100%;height:100%;object-fit:cover;border-radius:0;margin:0}
+.app .appvid .vplay{font-size:26px}
+.app .avf{width:100%;max-width:200px;aspect-ratio:9/16;margin:0 auto 8px}
+.app .avf iframe{width:100%;height:100%;border:0;border-radius:10px;background:#000}
 .app .story{display:inline-block;font-size:12.5px;font-weight:800;color:var(--orange);background:#fff;border:1.5px solid var(--orange);border-radius:999px;padding:4px 12px;text-decoration:none;margin:2px 0 8px}
 .btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;font-size:12.5px;padding:5px 14px;border-radius:999px}
 .btn.sub{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-left:4px}
@@ -86,20 +98,24 @@ footer a{color:var(--muted);margin:0 6px}
   </section>
 
   <h2 id="apps">つくったアプリ / Apps</h2>
-  <div class="grid">
-    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera"><img src="images/icon_pitcamera.png" width="72" height="72" alt="ピッとカメラ"></a>
+  <div class="grid apps">
+    <div class="app wide"><div class="info"><a href="https://play.google.com/store/apps/details?id=app.najit.pitcamera"><img src="images/icon_pitcamera.png" width="72" height="72" alt="ピッとカメラ"></a>
       <h3>ピッとカメラ</h3><p>撮影設定を保存して、ワンタップで切り替え</p>
       <a class="story" href="guide/camera-settings/">作った話を読む →</a>
       <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.pitcamera">Google Play</a></div>
-    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.karidori"><img src="images/icon_karidori.png" width="72" height="72" alt="カリドリカメラ"></a>
+      <a class="appvid" aria-label="動画を再生：ピッとカメラの紹介（23秒）" href="https://www.youtube.com/shorts/x5a2LZTsels" data-id="x5a2LZTsels" data-title="オートの状態をあなたの「ちょうどいい」に調整。Androidのカメラアプリを作りました"><img src="images/thumbs/x5a2LZTsels.jpg" width="110" height="196" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a></div>
+    <div class="app wide"><div class="info"><a href="https://play.google.com/store/apps/details?id=app.najit.karidori"><img src="images/icon_karidori.png" width="72" height="72" alt="カリドリカメラ"></a>
       <h3>カリドリカメラ</h3><p>撮った写真が、決めた日数で自動的に消える</p>
       <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.karidori">Google Play</a></div>
-    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.komameclean"><img src="images/icon_komameclean.png" width="72" height="72" alt="こまめクリーン"></a>
+      <a class="appvid" aria-label="動画を再生：カリドリカメラの紹介" href="https://www.youtube.com/shorts/0BtDT12hH18" data-id="0BtDT12hH18" data-title="自動で消えるメモ写真！カリドリカメラ"><img src="images/thumbs/0BtDT12hH18.jpg" width="110" height="196" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a></div>
+    <div class="app wide"><div class="info"><a href="https://play.google.com/store/apps/details?id=app.najit.komameclean"><img src="images/icon_komameclean.png" width="72" height="72" alt="こまめクリーン"></a>
       <h3>こまめクリーン</h3><p>消してもよさそうな写真を、毎日1〜5枚だけピックアップ</p>
       <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.komameclean">Google Play</a></div>
-    <div class="app"><a href="https://play.google.com/store/apps/details?id=app.najit.workpicker"><img src="images/icon_workpicker.png" width="72" height="72" alt="仕事写真ピッカー"></a>
+      <a class="appvid" aria-label="動画を再生：こまめクリーンの紹介" href="https://www.youtube.com/shorts/DiOApXXsYO4" data-id="DiOApXXsYO4" data-title="いらない写真、パパっと消しませんか？【こまめクリーン】"><img src="images/thumbs/DiOApXXsYO4.jpg" width="110" height="196" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a></div>
+    <div class="app wide"><div class="info"><a href="https://play.google.com/store/apps/details?id=app.najit.workpicker"><img src="images/icon_workpicker.png" width="72" height="72" alt="仕事写真ピッカー"></a>
       <h3>仕事写真ピッカー</h3><p>仕事の写真を、1つのフォルダに集める</p>
       <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.workpicker">Google Play</a></div>
+      <a class="appvid" aria-label="動画を再生：仕事写真ピッカーの紹介" href="https://www.youtube.com/shorts/YBuMYlEkPEU" data-id="YBuMYlEkPEU" data-title="仕事の写真、何千枚から探してない？ アプリでらくらく1か所に【仕事写真ピッカー】"><img src="images/thumbs/YBuMYlEkPEU.jpg" width="110" height="196" alt="" loading="lazy"><span class="vplay" aria-hidden="true">▶</span></a></div>
   </div>
 
   <h2 id="diary">ナジトの開発日記</h2>
@@ -280,6 +296,7 @@ footer a{color:var(--muted);margin:0 6px}
   <footer>&copy; Najit　／　<a href="mailto:najitmake@gmail.com">najitmake@gmail.com</a><br><span style="display:block;margin-top:6px;font-size:11px">このサイトは、訪問数を数えるために、Cloudflare Web Analytics（クッキーを使わない解析）を使っています。個人は特定しません。</span></footer>
 </div>
 <script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.appvid');if(!a)return;e.preventDefault();var box=document.createElement('div');box.className='avf';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);a.parentNode.replaceChild(box,a);});
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.play');if(!a)return;e.preventDefault();var long=a.getAttribute('data-kind')==='long';var card=a.closest('.vid');var box=document.createElement('div');box.className='vframe '+(long?'long':'short');var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);if(a.classList.contains('vthumb')){card.classList.add('playing');a.parentNode.replaceChild(box,a);}else{var act=a.parentNode;act.parentNode.insertBefore(box,act);act.removeChild(a);}});
 </script>
 <script src="utm.js" defer></script>
