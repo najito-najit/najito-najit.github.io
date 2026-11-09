@@ -134,6 +134,31 @@ footer a{color:var(--muted);margin:0 6px}
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.ytplay');if(!a)return;e.preventDefault();var box=document.createElement('div');box.className='vf';var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(a.getAttribute('data-id'))+'?autoplay=1&rel=0&playsinline=1';f.title=a.getAttribute('data-title')||'動画';f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');box.appendChild(f);a.parentNode.replaceChild(box,a);});
 </script>
-<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script>
+/* 訪問の計測（Cloudflare Web Analytics）。?me=1 を一度開いたブラウザでは計測を動かさない（自分たちの閲覧を数えないため）。?me=0 で元に戻す。 */
+(function () {
+  var q = null;
+  try {
+    q = new URLSearchParams(location.search).get("me");
+    if (q === "1") localStorage.setItem("najit_me", "1");
+    if (q === "0") localStorage.removeItem("najit_me");
+  } catch (e) {}
+  if (q === "1" || q === "0") {
+    document.addEventListener("DOMContentLoaded", function () {
+      var d = document.createElement("div");
+      d.textContent = q === "1" ? "このブラウザでは訪問を数えません" : "このブラウザの訪問を数えるように戻しました";
+      d.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:8px;font-size:14px;z-index:9999";
+      document.body.appendChild(d);
+      setTimeout(function () { d.remove(); }, 4000);
+    });
+  }
+  try { if (localStorage.getItem("najit_me")) return; } catch (e) {}
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", '{"token": "6ebc9dbcd9ee402397dacd17653a22ea"}');
+  document.head.appendChild(s);
+})();
+</script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
