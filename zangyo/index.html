@@ -67,6 +67,10 @@ select{max-width:190px}
 .quick th{font-size:12.5px;color:var(--muted);font-weight:700;text-align:right}
 .quick th:first-child,.quick td:first-child{text-align:left}
 .quick td:first-child{font-weight:700}
+.appcard{display:flex;gap:12px;align-items:flex-start;padding:12px 16px}
+.appcard img{border-radius:12px;display:block;flex:none}
+.apptitle{font-size:15px;font-weight:800;margin:0 0 2px;line-height:1.5}
+.appcard .btn{margin-top:2px}
 .same{font-size:13px;color:var(--muted);margin:2px 0 6px}
 details{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:6px 16px;margin:0 0 12px}
 summary{font-size:15px;font-weight:700;min-height:44px;display:flex;align-items:center;cursor:pointer;list-style:none}
@@ -170,6 +174,15 @@ footer a{color:var(--muted);margin:0 6px}
     <p class="small">小数の明細なら、12.50 は12時間30分のことが多いです。12.30 で12時間30分を表す会社もあります。</p>
     <div class="row"><span>実際の残業の合計と明細の差</span><b id="meiDiff">―</b></div>
   </details>
+
+  <div class="card appcard">
+    <a href="https://play.google.com/store/apps/details?id=app.najit.zanlog&referrer=utm_source%3Dnajit_site%26utm_medium%3Dsite%26utm_campaign%3Dzangyo_page"><img src="../images/icon_zanlog.png" width="56" height="56" alt="残ログ"></a>
+    <div>
+      <p class="apptitle">毎日つけるなら<br>アプリ「残ログ」</p>
+      <p class="small">出勤・退勤をワンタップで残します。刻みで切り捨てた後の残業と実際の残業の差を毎日ためて、日ごと・月ごとに表示します。記録はスマホの中だけです（Android）。</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.najit.zanlog&referrer=utm_source%3Dnajit_site%26utm_medium%3Dsite%26utm_campaign%3Dzangyo_page">Google Play で見る</a>
+    </div>
+  </div>
 
   <h2>残業の切り捨て、1か月・1年でどのくらい？</h2>
   <p>毎日同じ分だけ切り捨てられたときの合計です。1か月は20日、1年は12か月（240日）で計算しています。</p>
