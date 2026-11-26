@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>残ログ：残業記録・実際と会社の数え方の差｜切り捨てを計算｜Najit</title>
-<meta name="description" content="定時と帰った時刻、会社の刻みを入れると、実際の残業と刻みで数えた時間の差が出ます。申請した時間や給与明細とも比べられます。入力した内容はどこにも送りません。">
-<meta property="og:title" content="残ログ：残業記録・実際と会社の数え方の差">
+<title>残ログ：残業の切り捨て、1か月でどのくらい？15分・30分刻みの差を計算｜Najit</title>
+<meta name="description" content="15分・30分刻みで切り捨てられた残業が、1か月・1年でどのくらいになるかの早見表と計算です。定時と帰った時刻、会社の刻みを入れると、実際の残業との差が出ます。入力した内容はどこにも送りません。">
+<meta property="og:title" content="残ログ：残業の切り捨て、1か月でどのくらい？">
 <meta property="og:description" content="定時と帰った時刻、会社の刻みを入れると、実際の残業との差が出ます。入力した内容はどこにも送りません。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://najito-najit.github.io/zangyo/">
@@ -61,6 +61,12 @@ a{color:var(--orange)}
 .hmbox{display:flex;align-items:center;gap:4px;font-weight:400}
 .hmbox input{width:64px;min-width:0}
 select{max-width:190px}
+.quick{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border:1.5px solid var(--line);margin:6px 0 4px}
+.quick th,.quick td{border-top:1px solid var(--line);padding:6px 6px;text-align:right;white-space:nowrap}
+.quick th{white-space:normal;line-height:1.4}
+.quick th{font-size:12.5px;color:var(--muted);font-weight:700;text-align:right}
+.quick th:first-child,.quick td:first-child{text-align:left}
+.quick td:first-child{font-weight:700}
 .same{font-size:13px;color:var(--muted);margin:2px 0 6px}
 details{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:6px 16px;margin:0 0 12px}
 summary{font-size:15px;font-weight:700;min-height:44px;display:flex;align-items:center;cursor:pointer;list-style:none}
@@ -86,7 +92,7 @@ footer a{color:var(--muted);margin:0 6px}
   <div class="top"><a class="logo" href="../">Najit</a><div class="nav"><a href="../">TOP</a></div></div>
 
   <h1>残ログ<span class="sub">：残業記録・実際と会社の数え方の差</span></h1>
-  <p class="upd">2026年11月7日 時点</p>
+  <p class="upd">2026年11月26日 時点</p>
   <p class="lead">残業の切り捨てを計算します。定時と帰った時刻を入れると、実際の残業と、会社が認知した残業の差が出ます。入力した内容はどこにも送りません。</p>
 
   <div class="card">
@@ -164,6 +170,19 @@ footer a{color:var(--muted);margin:0 6px}
     <p class="small">小数の明細なら、12.50 は12時間30分のことが多いです。12.30 で12時間30分を表す会社もあります。</p>
     <div class="row"><span>実際の残業の合計と明細の差</span><b id="meiDiff">―</b></div>
   </details>
+
+  <h2>残業の切り捨て、1か月・1年でどのくらい？</h2>
+  <p>毎日同じ分だけ切り捨てられたときの合計です。1か月は20日、1年は12か月（240日）で計算しています。</p>
+  <table class="quick">
+    <tr><th>1日の<br>切り捨て</th><th>1か月</th><th>1年</th><th>1年を賃金に直すと<br>（1時間1,500円）</th></tr>
+    <tr><td>5分</td><td>1時間40分</td><td>20時間</td><td>30,000円</td></tr>
+    <tr><td>7分</td><td>2時間20分</td><td>28時間</td><td>42,000円</td></tr>
+    <tr><td>10分</td><td>3時間20分</td><td>40時間</td><td>60,000円</td></tr>
+    <tr><td>15分</td><td>5時間</td><td>60時間</td><td>90,000円</td></tr>
+    <tr><td>20分</td><td>6時間40分</td><td>80時間</td><td>120,000円</td></tr>
+  </table>
+  <p class="small">15分刻みなら、1日に切り捨てられるのは0〜14分です。帰る時刻が日によってばらばらなら、平均で約7分になります。30分刻みなら0〜29分で、平均で約15分です。</p>
+  <p class="small">賃金の欄は、時間に1,500円をかけただけの目安です。実際に支払われる額とは違います。自分の時刻と刻みで出すときは、上の欄に入れてください。</p>
 
   <h2>計算の例</h2>
   <h3>15分刻みだと、18:39 は何時として数えられますか？</h3>
